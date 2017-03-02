@@ -6,3 +6,53 @@
   z-index: 10;
   background-color: #111;
 }
+
+/* line 11, ../sass/style.scss */
+h3 {
+  display: inline-block;
+  padding: 10px;
+  background: #B9121B;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* line 21, ../sass/style.scss */
+ul {
+  display: none;
+}
+
+/* line 24, ../sass/style.scss */
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* line 29, ../sass/style.scss */
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+@media (min-width: 800px) {
+  /* line 34, ../sass/style.scss */
+  ul {
+    display: block;
+  }
+
+  /* line 37, ../sass/style.scss */
+  #toggle-menu {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  /* line 42, ../sass/style.scss */
+  ul.active {
+    display: block;
+  }
+
+  /* line 45, ../sass/style.scss */
+  ul.active li {
+    display: block;
+  }
+}

@@ -7,3 +7,43 @@
   z-index:10;
   background-color: #111;
 }
+
+h3 {
+  display: inline-block;
+  padding: 10px;
+  background: #B9121B;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+// NAV
+
+ul {
+  display: none;
+}
+li {
+  list-style: none;
+  display: inline-block;
+  padding: 0 10px;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+@media (min-width: 800px) {
+  ul {
+    display: block;
+  }
+  #toggle-menu {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  ul.active {
+    display: block;
+  }
+  ul.active li {
+    display: block;
+  }
+}
+
