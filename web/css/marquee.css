@@ -1,0 +1,80 @@
+
+
+.contenta {
+	display: block;
+	width: 100%;
+	margin: 0 auto;	
+}
+
+.containera {
+	width:100%;
+	float: left;
+	display:inline-block;
+	overflow: hidden;
+	box-sizing: border-box;
+	height: auto;
+	position: relative;
+	cursor: pointer;
+	background:#D9DEE8;
+}
+
+.scroll-cnt{border:1px solid #dbdbdb; padding-top:5px; padding-right:10px;}
+
+.marquee-sibling {
+	font-family: 'Montserrat', sans-serif !important;
+	padding:18px 0 0 20px;
+	background:#D9DEE8;
+	width:250px;
+	height:48px;
+	font-weight:bold; color:#001830; font-size:16px;
+	text-align: left;
+	float: left;
+	left: 0;
+	z-index:10;
+}
+
+.marquee, *[class^="marquee"] {
+	display: inline-block;
+	white-space: nowrap;
+	position:absolute;
+}
+
+.marquee{
+  margin-left: 25%;
+}
+
+.marquee-content-items{
+  display: inline-block;
+  padding: 5px;
+  margin: 0;
+  height: auto;
+  position: relative;
+}
+
+.marquee-content-items li{
+  display: inline-block;
+  color: #444;
+}
+
+.marquee-content-items li:after{
+	content: "|";
+	margin: 0 1em;
+}
+
+a.back-to-top {
+	display: none;
+	width: 40px;
+	height: 40px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #E74C3C url(../images/up-arrow.png) no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
+}
+a:hover.back-to-top {
+	background-color: #C0392B;
+}

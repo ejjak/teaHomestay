@@ -1,0 +1,8 @@
+@import url("reset.css");
+/* line 4, ../sass/style.scss */
+#header {
+  width: 100%;
+  position: absolute;
+  z-index: 10;
+  background-color: #111;
+}
