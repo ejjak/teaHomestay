@@ -2,11 +2,19 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="description" content="Tea Village Hmoestay Cottage Mirik Darjeeling">
+        <meta name="keywords" content="darjeeling homestay,tea village, tabakosi">
+        <meta name="author" content="ezycreation">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css"/>
+            <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
             <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css"/>
         {% endblock %}
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -14,18 +22,23 @@
             <section id="header">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12">
-                          <nav>
-                              <a href="#" id="toggle-menu">Toggle menu</a>
-                              <ul>
-                                  <li><a href="#">Link</a></li>
-                                  <li><a href="#">Action</a></li>
-                                  <li><a href="#">Another action</a></li>
-                                  <li><a href="#">Something else here</a></li>
-                                  <li><a href="#">Separated link</a></li>
-                                  <li><a href="#">One more separated link</a></li>
-                              </ul>
-                          </nav>
+                        <div class="col-lg-4">
+                            <div class="logo"><a href="#">Darjeeling <span>Homestay</span></a></div>
+                        </div>
+                        <div class="col-lg-8">
+                            <nav role="custom-dropdown">
+                                <input type="checkbox" id="button">
+                                <label for="button" onclick></label>
+
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Activities</a></li>
+                                    <li><a href="#">Rooms & Tariff</a></li>
+                                    <li><a href="#">Photo Gallery</a></li>
+                                    <li><a href="#">Contact us</a></li>
+                                    <li><i class="fa fa-phone"></i></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                 </div>
