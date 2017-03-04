@@ -1,44 +1,51 @@
 @import url("../css/reset.css");
+@import "compass/css3";
 
 // Font Variables
 $open-sans: 'Open Sans', sans-serif;
 $play-fair: 'Playfair Display', serif;
 $montserrat:'Montserrat', sans-serif;
 
+
 body{
   font-size: 14px;
-  font-family:$open-sans;
-  font-weight: normal;
+  font-family:$play-fair;
+  font-weight:400;
+  line-height:2.429em;
 }
 
 a{
   text-decoration: none;
+  font-family: $open-sans;
 }
 
-#header{
+h1{ font-size:2.286em;}
+
+#header_wrap{
   width:100%;
   position:absolute;
   z-index:10;
-  background-color: #111;
-  padding:15px 0;
+  padding:0 0 18px 0;
+  background:url('../img/header_bg.png') repeat-x bottom;
 }
 
-h3 {
-  display: inline-block;
-  padding: 10px;
-  background: #B9121B;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+.header{
+  background: #111;
+  padding:20px 0 12px 0;
 }
+
 
 // LOGO
 
 .logo {
   position:absolute;
-  font-family:$play-fair;
-  font-size:1.5em ;
+  font-size:2.000em ;
+  padding:5px 0 0 0 ;
+  i{font-family: 'Great Vibes', cursive;}
   a{
     color: #f1f1f1;
+    text-decoration:none;
+    font-family:$play-fair;
   }
   span{
     color:green;
@@ -64,9 +71,12 @@ h3 {
     width: 100%;
     display:block !important;
     z-index:1;
+
+
     &:first-child{
       top:auto;
       position:relative;
+
     }
 
     &.active
@@ -78,6 +88,33 @@ h3 {
       transition: opacity ease-in-out .7s;
       z-index:2;
     }
+  }
+}
+
+.carousel-caption{
+  position: absolute !important;
+  top:40%;
+  left:20%;
+  font-family:$play-fair;
+  text-align: left;
+
+  p{
+    font-size:3.0vh;
+    line-height:1.514em;
+    margin-bottom:20px;
+  }
+
+  h3{
+    font-size:5.0vh;
+    padding-bottom:20px;
+    line-height:1em;
+  }
+
+    span a{
+      color:#f1f1f1;
+      padding:5px 10px;
+      background:#111;
+      @include border-radius(5px);
   }
 }
 
@@ -101,14 +138,17 @@ nav[role="custom-dropdown"] {
   position:relative;
   width: 100%;
   text-transform: uppercase;
-  font-family:$open-sans;
+  font-family:$montserrat;
+
+  .tp_cnct .fa{ font-size:1.368em;}
+
+  .active a{ color:#5d9d43; }
 
   a,
   label {
     color:#f1f1f1;
     text-decoration:none;
-    font-size:0.9em;
-    transition:color .3s ease-in-out;
+    font-size:1em;
   }
 
   ul {
@@ -124,22 +164,14 @@ nav[role="custom-dropdown"] {
       text-align:center;
       transition-duration: .3s;
       transition-timing-function: ease-in-out;
-      transition-property: box-shadow, color;
-      box-shadow: 0 .05em .25em 0 rgba(0, 0, 0, .35)
-    ;
       cursor: pointer;
 
       &:hover {
-        background-color:rgba(0, 0, 0, .85);
-        color:#fff;
-        box-shadow:
-                0 .05em .25em 0 rgba(0, 0, 0, .35),
-                inset 0 0 0 2em rgba(0, 0, 0, .3)
-      ;
+        color:#5d9d43;
 
 
         > a {
-          color:#fff;
+          color:#5d9d43;
         }
       }
     }
@@ -193,4 +225,114 @@ nav[role="custom-dropdown"] {
       }
     }
   }
+}
+
+.tp_cnct {
+  position: relative;
+  top: 0;
+  z-index: 1;
+}
+
+
+.two {
+  padding:30px 20px;
+  background-color:#111;
+  display: none;
+  position: absolute;
+  right:10px;
+  color: #f1f1f1;
+  font-family: $open-sans;
+  text-transform: none;
+  line-height:1.857em;
+  @include border-radius(10px);
+}
+
+// SECTION A
+
+#sectionA{
+  background:url('../img/section-bg.png')repeat-x #f8f8f8;
+  padding:80px 0;
+
+  
+  h1{
+    margin:0 0 20px 0;
+  }
+
+  span{
+    font-weight: bold;
+  }
+}
+
+#sectionB{
+  h1{
+   padding-bottom: 30px;
+    > span{ font-size:0.7em;}
+
+  }
+  .visit-us{
+    padding:80px 0 100px 0;
+    background:url('../img/service-bg.jpg') no-repeat #fff;
+  }
+
+  @media screen and (max-width: 480px) {
+    .visit-us{
+      padding:80px 0 100px 0;
+      background:url('../img/service-bg.jpg') no-repeat #fff;
+      background-size:cover;
+    }
+  }
+
+}
+
+a.read-more{
+  color:#f1f1f1;
+  padding:5px 10px;
+  background:#111;
+  cursor: pointer;
+}
+
+#contact-box{
+  position: absolute;
+  top:-120px;
+  right: 0;
+  background: #438831;
+  color:#f1f1f1;
+  padding:80px 40px;
+
+  h1{
+    font-size: 2.571em;
+  }
+
+  p{
+    font-size: 1.286em;
+  }
+}
+
+
+#sectionC{
+  padding: 60px 0;
+  background: #f8f8f8;
+}
+
+#testimonials{
+  background: url('../img/quote.png') no-repeat left top ;
+  padding-top:60px;
+
+  p{
+    font-size: 1.714em;
+    font-style: italic;
+  }
+
+  span{}
+}
+
+// FOOTER
+
+footer{
+  background: #111;
+  padding: 60px 0;
+  color: #f1f1f1;
+  text-align: center;
+  font-family:$montserrat;
+  font-weight:300;
 }

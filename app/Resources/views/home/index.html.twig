@@ -1,7 +1,5 @@
 {% extends 'base.html.twig' %}
-{% block title %}Tea Village Hmoestay Cottage Mirik Darjeeling{% endblock %}
 {% block body %}
-    {{ parent() }}
     <div id="mycarousel" class="carousel fade" data-ride="carousel">
         <!-- Indicators -->
         <ol class="carousel-indicators">
@@ -9,39 +7,44 @@
             <li data-target="#mycarousel" data-slide-to="1"></li>
             <li data-target="#mycarousel" data-slide-to="2"></li>
             <li data-target="#mycarousel" data-slide-to="3"></li>
-            <li data-target="#mycarousel" data-slide-to="4"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item">
-                <img src="https://unsplash.it/2000/1250?image=397" data-color="lightblue" alt="First Image">
+                <img src="{{ asset('img/slider/1.jpg') }}" data-color="grey" alt="First Image">
                 <div class="carousel-caption">
-                    <h3>First Image</h3>
+                    <h3>Imperial Tea Village in Darjeeling</h3>
+                    <p>Taba Kosi & Seven Tea Gardens in one place<br>
+                        & home stay accommodation in cottage.</p>
+                    <span><a href="">know more</a></span>
                 </div>
             </div>
             <div class="item">
-                <img src="https://unsplash.it/2000/1250?image=689" data-color="firebrick" alt="Second Image">
+                <img src="{{ asset('img/slider/2.jpg') }}" data-color="firebrick" alt="Second Image">
                 <div class="carousel-caption">
-                    <h3>Second Image</h3>
+                    <h3>Imperial Tea Village in Darjeeling</h3>
+                    <p>Taba Kosi & Seven Tea Gardens in one place<br>
+                        & home stay accommodation in cottage.</p>
+                    <span><a href="">know more</a></span>
                 </div>
             </div>
             <div class="item">
-                <img src="https://unsplash.it/2000/1250?image=675" data-color="violet" alt="Third Image">
+                <img src="{{ asset('img/slider/3.jpg') }}" data-color="violet" alt="Third Image">
                 <div class="carousel-caption">
-                    <h3>Third Image</h3>
+                    <h3>Imperial Tea Village in Darjeeling</h3>
+                    <p>Taba Kosi & Seven Tea Gardens in one place<br>
+                        & home stay accommodation in cottage.</p>
+                    <span><a href="">know more</a></span>
                 </div>
             </div>
             <div class="item">
-                <img src="https://unsplash.it/2000/1250?image=658" data-color="lightgreen" alt="Fourth Image">
+                <img src="{{ asset('img/slider/4.jpg') }}" data-color="lightgreen" alt="Fourth Image">
                 <div class="carousel-caption">
-                    <h3>Fourth Image</h3>
-                </div>
-            </div>
-            <div class="item">
-                <img src="https://unsplash.it/2000/1250?image=638" data-color="tomato" alt="Fifth Image">
-                <div class="carousel-caption">
-                    <h3>Fifth Image</h3>
+                    <h3>Imperial Tea Village in Darjeeling</h3>
+                    <p>Taba Kosi & Seven Tea Gardens in one place<br>
+                        & home stay accommodation in cottage.</p>
+                    <span><a href="">know more</a></span>
                 </div>
             </div>
         </div>
@@ -59,11 +62,54 @@
     <section id="sectionA">
         <div class="container">
             <div class="row">
+                <div class="col-lg-6">
+                    <h1>Imperial Tea village in Darjeeling</h1>
+                    <span>Taba Kosi & Seven Tea Gardens in one place & homestay <br>accommodation in cottage.</span>
+                    <p>Taba Kosi, a River valley , new tourist spot. about six kilometers from Mirik,in the district of Darjeeling a new tourism destination has come up, surrounded by orange orchards , Seven  tea gardens –Thurbu ,Gopal Dhara, Siyok,Turjam,Sungma and Margarjung and Okey Tea  offers facilities for  tourist with short trek, River bank walk, Village walk,Fishing,River valley Camping, Bird Watching, paragliding  Home stay, Guest house facilities are provided, rest sheds, beautiful flower gardens and park. It also has a Vishnu temple, Shiva Temple, orchid flower show emporium, inaugurated</p>
+                    <a href="#" class="read-more">Read more</a>
+                </div>
+                <div class="col-lg-6">
+                  <img src="{{ asset('img/intro-img.jpg') }}" alt="darjeeling homestay" class="img-responsive hidden-xs">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sectionB">
+        <div class="container">
+            <div class="row  visit-us">
                 <div class="col-lg-8">
-                    sdfsdf
+                    <h1>Why to visit Tabakosi ? - <span>Imperial Tea village in Darjeeling</span></h1>
+                    <div class="col-lg-6 no-gutter"><img src="{{ asset('img/why-tabakosi.jpg') }}" alt="why tabakosi" class="img-responsive"></div>
+                    <div class="col-lg-6">This is a new tourism destination in the foothills in between  Darjeeling & Mirik  , about six kilometers from Mirik, in the district of Darjeeling a new tourism destination has come up, surrounded by orange orchards , Seven  tea gardens –Thurbu ,Gopal Dhara, Siyok,Turjam,Sungma and Margarjung and Okey Tea.</div>
                 </div>
                 <div class="col-lg-4">
-                    sdfsdfsdfsdf
+                    <div id="contact-box" class="hidden-xs hidden-sm hidden-md">
+                        <h1>Contact Details</h1>
+                        <p>Upper Arithang, Below Lotus lodge, Gangtok-737101-Sikkim<br><br>
+
+                        Landline: +91 3592-204538<br>
+                        Cell  :09434131737 / 09153822908<br>
+                        Email : booking@neatholidays.com
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sectionC">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+
+                </div>
+                <div class="col-lg-7">
+                    <div id="testimonials">
+                   <p> " A homestay like no other which exudes a sense of place like no other.
+                    The best homestay in the entire region ".</p>
+                     <span>- Mr. ABCDRFG <br>
+                    - Kolkata, INDIA</span>
+                    </div>
                 </div>
             </div>
         </div>
