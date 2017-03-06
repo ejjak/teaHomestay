@@ -42,7 +42,7 @@ class PagesController extends Controller
             $em->persist($page);
             $em->flush($page);
 
-            return $this->redirectToRoute('pa', array('id' => $page->getId()));
+            return $this->redirectToRoute('pages_show', array('id' => $page->getId()));
         }
 
         return $this->render('pages/new.html.twig', array(
