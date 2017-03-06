@@ -1,0 +1,42 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="panel panel-default">
+
+        <div class="panel-body">
+            {{ form_start(form) }}
+            <table width="100%">
+                <tbody>
+                <tr>
+                    <th><h6>Title</h6></th>
+                    <td>{{ form_widget(form.title, {'attr':{'class': 'form-control'}}) }}</td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th><h6>Category</h6></th>
+                    <td>{{ form_widget(form.type, {'attr':{'class': 'form-control'}}) }}</td>
+                </tr>
+                <tr>
+                    <th>&nbsp;</th>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+
+                    <td colspan="2"> {{ form_widget(form.description, {'attr':{'class': 'form-control'}}) }}</td>
+                </tr>
+                </tbody>
+            </table>
+            <p>&nbsp;</p>
+            <input type="submit" value="Create"  class="add_block black x-small btn btn-sm btn-primary" />
+            {{ form_end(form) }}
+        </div>
+    </div>
+    <ul>
+        <li>
+            <a href="{{ path('pages_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

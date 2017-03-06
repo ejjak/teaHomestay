@@ -1,0 +1,24 @@
+pages_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Pages:index" }
+    methods:  GET
+
+pages_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Pages:show" }
+    methods:  GET
+
+pages_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Pages:new" }
+    methods:  [GET, POST]
+
+pages_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Pages:edit" }
+    methods:  [GET, POST]
+
+pages_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Pages:delete" }
+    methods:  DELETE
