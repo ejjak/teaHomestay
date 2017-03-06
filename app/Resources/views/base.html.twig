@@ -73,16 +73,7 @@
         {% block javascripts %}
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
             <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
-            <script type="text/javascript">
-                $('#toggle-menu').click(function(e) {
-                    e.preventDefault();
-                    $('ul').toggleClass('active');
-                });
-
-                $('.tp_cnct').click(function() {
-                    $('.two').slideToggle();
-                })
-            </script>
+            <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
         {% endblock %}
     </body>
 </html>

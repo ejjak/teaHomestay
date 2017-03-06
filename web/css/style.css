@@ -21,44 +21,51 @@ h1 {
 /* line 24, ../sass/style.scss */
 #header_wrap {
   width: 100%;
-  position: absolute;
+  position: fixed;
   z-index: 10;
-  padding: 0 0 18px 0;
+  padding: 0 0 14px 0;
   background: url("../img/header_bg.png") repeat-x bottom;
 }
 
 /* line 32, ../sass/style.scss */
 .header {
   background: #111;
-  padding: 20px 0 12px 0;
+  padding: 14px 0 12px 0;
+  transition: all 0.4s ease;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 38, ../sass/style.scss */
+.sticky {
+  padding: 10px 0 0px 0;
+  transition: all 0.4s ease;
+}
+
+/* line 45, ../sass/style.scss */
 .logo {
   position: absolute;
   font-size: 2em;
   padding: 5px 0 0 0;
 }
-/* line 44, ../sass/style.scss */
+/* line 49, ../sass/style.scss */
 .logo i {
   font-family: 'Great Vibes', cursive;
 }
-/* line 45, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 .logo a {
   color: #f1f1f1;
   text-decoration: none;
   font-family: "Playfair Display", serif;
 }
-/* line 50, ../sass/style.scss */
+/* line 55, ../sass/style.scss */
 .logo span {
   color: green;
 }
 
-/* line 57, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 .carousel.fade {
   opacity: 1;
 }
-/* line 61, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 .carousel.fade .item {
   -moz-transition: opacity ease-in-out .7s;
   -o-transition: opacity ease-in-out .7s;
@@ -72,12 +79,12 @@ h1 {
   display: block !important;
   z-index: 1;
 }
-/* line 76, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 .carousel.fade .item:first-child {
   top: auto;
   position: relative;
 }
-/* line 82, ../sass/style.scss */
+/* line 87, ../sass/style.scss */
 .carousel.fade .item.active {
   opacity: 1;
   -moz-transition: opacity ease-in-out .7s;
@@ -87,7 +94,7 @@ h1 {
   z-index: 2;
 }
 
-/* line 94, ../sass/style.scss */
+/* line 99, ../sass/style.scss */
 .carousel-caption {
   position: absolute !important;
   top: 40%;
@@ -95,19 +102,19 @@ h1 {
   font-family: "Playfair Display", serif;
   text-align: left;
 }
-/* line 101, ../sass/style.scss */
+/* line 106, ../sass/style.scss */
 .carousel-caption p {
   font-size: 3.0vh;
   line-height: 1.514em;
   margin-bottom: 20px;
 }
-/* line 107, ../sass/style.scss */
+/* line 112, ../sass/style.scss */
 .carousel-caption h3 {
   font-size: 5.0vh;
   padding-bottom: 20px;
   line-height: 1em;
 }
-/* line 113, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 .carousel-caption span a {
   color: #f1f1f1;
   padding: 5px 10px;
@@ -117,14 +124,14 @@ h1 {
   border-radius: 5px;
 }
 
-/* line 122, ../sass/style.scss */
+/* line 127, ../sass/style.scss */
 input[type=checkbox] {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
 
-/* line 128, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 label {
   display: none;
   cursor: pointer;
@@ -133,36 +140,36 @@ label {
 
 /* background for li / select */
 /* custom-dropdown */
-/* line 137, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
 nav[role="custom-dropdown"] {
   position: relative;
   width: 100%;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
 }
-/* line 143, ../sass/style.scss */
+/* line 148, ../sass/style.scss */
 nav[role="custom-dropdown"] .tp_cnct .fa {
   font-size: 1.368em;
 }
-/* line 145, ../sass/style.scss */
+/* line 150, ../sass/style.scss */
 nav[role="custom-dropdown"] .active a {
   color: #5d9d43;
 }
-/* line 147, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 nav[role="custom-dropdown"] a,
 nav[role="custom-dropdown"] label {
   color: #f1f1f1;
   text-decoration: none;
   font-size: 1em;
 }
-/* line 154, ../sass/style.scss */
+/* line 159, ../sass/style.scss */
 nav[role="custom-dropdown"] ul {
   padding: 0;
   margin: 0 auto;
   width: 100%;
   list-style: none;
 }
-/* line 160, ../sass/style.scss */
+/* line 165, ../sass/style.scss */
 nav[role="custom-dropdown"] ul > li {
   float: left;
   padding: .55em .85em;
@@ -172,23 +179,23 @@ nav[role="custom-dropdown"] ul > li {
   transition-timing-function: ease-in-out;
   cursor: pointer;
 }
-/* line 169, ../sass/style.scss */
+/* line 174, ../sass/style.scss */
 nav[role="custom-dropdown"] ul > li:hover {
   color: #5d9d43;
 }
-/* line 173, ../sass/style.scss */
+/* line 178, ../sass/style.scss */
 nav[role="custom-dropdown"] ul > li:hover > a {
   color: #5d9d43;
 }
 
 /* small screens */
 @media screen and (max-width: 44em) {
-  /* line 184, ../sass/style.scss */
+  /* line 189, ../sass/style.scss */
   nav[role="custom-dropdown"] ul {
     display: none;
     height: 100%;
   }
-  /* line 189, ../sass/style.scss */
+  /* line 194, ../sass/style.scss */
   nav[role="custom-dropdown"] label {
     position: relative;
     display: block;
@@ -198,7 +205,7 @@ nav[role="custom-dropdown"] ul > li:hover > a {
     font-size: 1.1em;
     margin: 0;
   }
-  /* line 199, ../sass/style.scss */
+  /* line 204, ../sass/style.scss */
   nav[role="custom-dropdown"] label:after {
     position: absolute;
     right: .25em;
@@ -206,21 +213,21 @@ nav[role="custom-dropdown"] ul > li:hover > a {
     content: "\2261";
     font-size: 1.8em;
   }
-  /* line 207, ../sass/style.scss */
+  /* line 212, ../sass/style.scss */
   nav[role="custom-dropdown"] input[type=checkbox]:checked ~ label:after {
     color: #222;
   }
-  /* line 211, ../sass/style.scss */
+  /* line 216, ../sass/style.scss */
   nav[role="custom-dropdown"] input[type=checkbox]:checked ~ ul {
     display: block;
   }
-  /* line 214, ../sass/style.scss */
+  /* line 219, ../sass/style.scss */
   nav[role="custom-dropdown"] input[type=checkbox]:checked ~ ul > li {
     width: 100%;
     opacity: .8;
     text-align: left;
   }
-  /* line 219, ../sass/style.scss */
+  /* line 224, ../sass/style.scss */
   nav[role="custom-dropdown"] input[type=checkbox]:checked ~ ul > li:after {
     position: absolute;
     right: .25em;
@@ -228,14 +235,14 @@ nav[role="custom-dropdown"] ul > li:hover > a {
     font: bold 1.4em sans-serif;
   }
 }
-/* line 230, ../sass/style.scss */
+/* line 235, ../sass/style.scss */
 .tp_cnct {
   position: relative;
   top: 0;
   z-index: 1;
 }
 
-/* line 237, ../sass/style.scss */
+/* line 242, ../sass/style.scss */
 .two {
   padding: 30px 20px;
   background-color: #111;
@@ -251,35 +258,35 @@ nav[role="custom-dropdown"] ul > li:hover > a {
   border-radius: 10px;
 }
 
-/* line 252, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 #sectionA {
   background: url("../img/section-bg.png") repeat-x #f8f8f8;
   padding: 80px 0;
 }
-/* line 257, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 #sectionA h1 {
   margin: 0 0 20px 0;
 }
-/* line 261, ../sass/style.scss */
+/* line 266, ../sass/style.scss */
 #sectionA span {
   font-weight: bold;
 }
 
-/* line 267, ../sass/style.scss */
+/* line 272, ../sass/style.scss */
 #sectionB h1 {
   padding-bottom: 30px;
 }
-/* line 269, ../sass/style.scss */
+/* line 274, ../sass/style.scss */
 #sectionB h1 > span {
   font-size: 0.7em;
 }
-/* line 272, ../sass/style.scss */
+/* line 277, ../sass/style.scss */
 #sectionB .visit-us {
   padding: 80px 0 100px 0;
   background: url("../img/service-bg.jpg") no-repeat #fff;
 }
 @media screen and (max-width: 480px) {
-  /* line 278, ../sass/style.scss */
+  /* line 283, ../sass/style.scss */
   #sectionB .visit-us {
     padding: 80px 0 100px 0;
     background: url("../img/service-bg.jpg") no-repeat #fff;
@@ -287,7 +294,7 @@ nav[role="custom-dropdown"] ul > li:hover > a {
   }
 }
 
-/* line 287, ../sass/style.scss */
+/* line 292, ../sass/style.scss */
 a.read-more {
   color: #f1f1f1;
   padding: 5px 10px;
@@ -295,7 +302,7 @@ a.read-more {
   cursor: pointer;
 }
 
-/* line 294, ../sass/style.scss */
+/* line 299, ../sass/style.scss */
 #contact-box {
   position: absolute;
   top: -120px;
@@ -304,33 +311,33 @@ a.read-more {
   color: #f1f1f1;
   padding: 80px 40px;
 }
-/* line 302, ../sass/style.scss */
+/* line 307, ../sass/style.scss */
 #contact-box h1 {
   font-size: 2.571em;
 }
-/* line 306, ../sass/style.scss */
+/* line 311, ../sass/style.scss */
 #contact-box p {
   font-size: 1.286em;
 }
 
-/* line 312, ../sass/style.scss */
+/* line 317, ../sass/style.scss */
 #sectionC {
   padding: 60px 0;
   background: #f8f8f8;
 }
 
-/* line 317, ../sass/style.scss */
+/* line 322, ../sass/style.scss */
 #testimonials {
   background: url("../img/quote.png") no-repeat left top;
   padding-top: 60px;
 }
-/* line 321, ../sass/style.scss */
+/* line 326, ../sass/style.scss */
 #testimonials p {
   font-size: 1.714em;
   font-style: italic;
 }
 
-/* line 331, ../sass/style.scss */
+/* line 336, ../sass/style.scss */
 footer {
   background: #111;
   padding: 60px 0;

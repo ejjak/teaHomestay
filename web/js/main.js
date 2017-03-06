@@ -1,23 +1,13 @@
+// NAV
 
-$(document).ready(function() { 
-		$('#incfont').click(function(){	   
-        curSize= parseInt($('.about-us, .content, .table_bor').css('font-size')) + 2;
-		if(curSize<=20)
-        $('.about-us, .content, .table_bor').css('font-size', curSize);
-        });  
-		$('#decfont').click(function(){	   
-        curSize= parseInt($('.about-us, .content, .table_bor').css('font-size')) - 2;
-		if(curSize>=12)
-        $('.about-us, .content, .table_bor').css('font-size', curSize);
-        }); 
-	});
-	
-//  Script to Activate the Carousel
+$('#toggle-menu').click(function(e) {
+  e.preventDefault();
+  $('ul').toggleClass('active');
+});
 
-$('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
-	
+$('.tp_cnct').click(function() {
+  $('.two').slideToggle();
+})
 // Scroll effect
 
 $(window).scroll(function(){
@@ -25,11 +15,11 @@ $(window).scroll(function(){
   var scroll = $(window).scrollTop();
 
   if (scroll > 0 ) {
-    $('nav').addClass('scrolled');
+    $('.header').addClass('sticky');
   }
 
   if (scroll <= 0 ) {
-    $('nav').removeClass('scrolled');
+    $('.header').removeClass('sticky');
  }
 
 });
@@ -196,41 +186,11 @@ $(document).ready(function(){
 });
 
 
-$(document).ready(function() {
-	var odometer,next;
-    var data = [
-        {text:'GSDP AT CURRENT PRICES (Rs in Lakhs)',value:'16,63678'},
-        {text:'GSDP AT CONSTANT PRICES (Rs in Lakhs)',value:'1372154'},
-        {text:'NSDP AT CURRENT PRICES (in Rs)',value:'1458646'},
-        {text:'NSDP AT CONSTANT PRICES (in Rs)',value:'1192843'},
-        {text:'PER CAPITA INCOME AT CURRENT PRICES (in Rs)',value:'259950'},
-        {text:'PER CAPITA INCOME AT CONSTANT PRICE (in Rs)',value:'214399'},
-    ];
-    var currentNumber = 0;
-    var od = document.querySelector('.odometer');
-    odometer = new Odometer({
-        el: od,
-        value: data[0].value,		
-    });
-    odometer.render();
-    next = function() {
-        var number;
-        number = data[currentNumber];
-        odometer.update(number.value);
-        $('.my-slider').find('.odometer-title').html(number.text);
-        return currentNumber = (currentNumber + 1) % data.length;
-    };
-    next();
-    return setInterval(function() {
-        return next();
-    }, 5000);
-
-})
-
-
 // SCROLL BAR
 
 	$(".x-scroll").mCustomScrollbar({
 					axis:"x",
 					advanced:{autoExpandHorizontalScroll:true}
 				});
+
+
