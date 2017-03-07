@@ -1,7 +1,32 @@
 {% extends 'page.html.twig' %}
+{% block parallax %}
+    <div class="effect about"></div>
+{% endblock %}
 {% block body %}
-    <div class="col-lg-8">
-        <h1>{{ title }}</h1>
-        {{ description|raw }}
-    </div>
+        <div class="col-lg-12">
+            <div class="content">
+                <div class="col-lg-9">
+                    <h1>{{ title }}</h1>
+                    {{ description|raw }}
+                </div>
+                <div class="col-lg-3 no-gutter">
+                    <div class="testimonials">
+                        <p> " A homestay like no other which exudes a sense of place like no other.
+                            The best homestay in the entire region "</p>
+                         <span>- Mr. ABCDRFG <br>
+                    - Kolkata, INDIA</span>
+                    </div>
+                    <div class="contact">
+                        <h1>Contact Details</h1>
+                        <p>Upper Arithang, Below Lotus lodge, Gangtok-737101-Sikkim<br><br>
+
+                            Landline: +91 3592-204538<br>
+                            Cell  :09434131737 / 09153822908<br>
+                            Email : booking@neatholidays.com
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+         </div>
 {% endblock %}

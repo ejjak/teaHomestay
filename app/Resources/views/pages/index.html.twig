@@ -1,43 +1,44 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Pages list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Type</th>
-                <th>Description</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for page in pages %}
-            <tr>
-                <td><a href="{{ path('pages_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
-                <td>{{ page.title }}</td>
-                <td>{{ page.type }}</td>
-                <td>{{ page.description }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('pages_show', { 'id': page.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('pages_edit', { 'id': page.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('pages_new') }}">Create a new page</a>
-        </li>
-    </ul>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Page list</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                        <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for page in pages %}
+                        <tr>
+                            <td><a href="{{ path('pages_show', { 'id': page.id }) }}">{{ page.id }}</a></td>
+                            <td>{{ page.title }}</td>
+                            <td>{{ page.type }}</td>
+                            <td width="15%">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <a href="{{ path('pages_show', { 'id': page.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-eye"></i>show</a>
+                                        </td>
+                                        <td>
+                                            <a href="{{ path('pages_edit', { 'id': page.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i>edit</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div></div>
+    <a href="{{ path('pages_new') }}" class="btn btn-md btn-default">Create a new entry</a>
 {% endblock %}

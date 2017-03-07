@@ -6,7 +6,7 @@
  * Time: 6:10 PM
  */
 namespace AppBundle\Controller;
-use Proxies\__CG__\AppBundle\Entity\Pages;
+use AppBundle\Entity\Pages;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class FrontController extends Controller
