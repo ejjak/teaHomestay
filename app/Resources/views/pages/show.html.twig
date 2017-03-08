@@ -1,40 +1,42 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Page</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <table width="100%">
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ page.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ page.title }}</td>
-            </tr>
-            <tr>
-                <th>Type</th>
-                <td>{{ page.type }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ page.description }}</td>
-            </tr>
-        </tbody>
-    </table>
+                <tr>
+                    <th><h5>{{ page.title }}</h5></th>
+                    <td align="right">ID: {{ page.id }}</td>
+                </tr>
 
-    <ul>
-        <li>
-            <a href="{{ path('pages_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('pages_edit', { 'id': page.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+            </table>
+        </div>
+        <div class="panel-body">
+            <table>
+                <tbody>
+                <tr>
+                    <td>{{ page.description|raw }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div style="border-top:1px solid #dbdbdb; padding-top: 10px;">
+        <table>
+            <tr>
+                <td>
+                    <a href="{{ path('pages_index') }}" class="btn btn-sm btn-default"><i class="fa fa-mail-reply"></i> Back to the list</a>
+                </td>
+                <td>
+                    <a href="{{ path('pages_edit', { 'id': page.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i> Edit</a>
+                </td>
+                <td>
+                    {{ form_start(delete_form) }}
+                    <p ><button type="submit" value="Delete" class="btn btn-sm btn-default"><i class="fa  fa-trash-o"></i> Delete</button></p>
+                    {{ form_end(delete_form) }}
+                </td>
+            </tr>
+        </table>
+    </div>
 {% endblock %}

@@ -2,7 +2,16 @@ app_pages:
     resource: "@AppBundle/Resources/config/routing/pages.yml"
     prefix:   /pages
 
+app_contact:
+    resource: "@AppBundle/Resources/config/routing/contact.yml"
+    prefix:   /contact
+
 
 tea_homestay_pageview:
     path: /page/{id}
     defaults: {_controller: AppBundle:Front:PageView }
+
+
+tea_homestay_contact:
+    path: /contact_show/{id}
+    defaults: {_controller: AppBundle:Front:Contact}

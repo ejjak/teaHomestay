@@ -31,13 +31,6 @@ class Pages
     /**
      * @var string
      *
-     * @ORM\Column(name="type", type="text")
-     */
-    private $type;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -77,29 +70,6 @@ class Pages
         return $this->title;
     }
 
-    /**
-     * Set type
-     *
-     * @param string $type
-     *
-     * @return Pages
-     */
-    public function setType($type)
-    {
-        $this->type = $type;
-
-        return $this;
-    }
-
-    /**
-     * Get type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->type;
-    }
 
     /**
      * Set description

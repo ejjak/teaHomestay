@@ -2,23 +2,18 @@
 
 namespace AppBundle\Form;
 
-use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class PagesType extends AbstractType
+class ContactType extends AbstractType
 {
     /**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('title')->add('description')
-            ->add('description',CKEditorType::class, array('config_name' => 'my_config',))
-        ;
+        $builder->add('phone')->add('email')->add('landline')->add('address');
     }
     
     /**
@@ -27,7 +22,7 @@ class PagesType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Pages'
+            'data_class' => 'AppBundle\Entity\Contact'
         ));
     }
 
@@ -36,7 +31,7 @@ class PagesType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_pages';
+        return 'appbundle_contact';
     }
 
 

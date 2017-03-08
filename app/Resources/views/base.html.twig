@@ -9,6 +9,7 @@
         <title>{% block title %}Tea village home stay, Cottage in Darjeeling, Home stay in Darjeeling, off beat stay in Darjeeling, Home stay in Mirik,Home stay at Tabakosi,
                 Darjeeling village stay,!{% endblock %}</title>
         {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('css/superslides.css') }}" type="text/css"/>
             <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css"/>
             <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
             <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css"/>
@@ -36,9 +37,9 @@
                                 <ul>
                                     <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
                                     <li><a href="#">Activities</a></li>
-                                    <li><a href="#">Rooms & Tariff</a></li>
+                                    <li><a href="{{ path('tea_homestay_pageview',{'id':3}) }}">Rooms & Tariff</a></li>
                                     <li><a href="#">Photo Gallery</a></li>
-                                    <li><a href="#">How to reach</a></li>
+                                    <li><a href="{{ path('tea_homestay_pageview',{'id':4}) }}">How to reach</a></li>
                                     <li><a href="#">Contact us</a></li>
                                     <li class="tp_cnct hidden-xs"><i class="fa fa-phone"></i>
                                         <span class="two">

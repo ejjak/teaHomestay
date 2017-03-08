@@ -6,6 +6,7 @@
  * Time: 6:10 PM
  */
 namespace AppBundle\Controller;
+use AppBundle\Entity\Contact;
 use AppBundle\Entity\Pages;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -27,6 +28,28 @@ class FrontController extends Controller
             'title' => $title,
             'description' => $body,
 
+        ));
+    }
+
+    public function ContactAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $view = $em->getRepository('AppBundle:Contact')->find($id);
+        if($view instanceof Contact){
+            $phone = $view->getPhone();
+            $landline = $view->getLandline();
+            $email = $view->getEmail();
+            $address = $view->getAddress();
+        }
+
+//        dump($view);die;
+
+        return $this->render('contact/contact.html.twig', array(
+            'id'=> $id,
+            'phone' => $phone,
+            'landline' => $landline,
+            'email' => $email,
+            'address' => $address
         ));
     }
 
