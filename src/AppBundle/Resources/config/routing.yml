@@ -6,6 +6,9 @@ app_contact:
     resource: "@AppBundle/Resources/config/routing/contact.yml"
     prefix:   /contact
 
+tea_homestay_booking:
+    path: /booking
+    defaults: {_controller: AppBundle:Booking:contact }
 
 tea_homestay_pageview:
     path: /page/{id}
