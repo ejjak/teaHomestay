@@ -32,8 +32,17 @@ tea_homestay_pageview:
 
 
 tea_homestay_packageview:
-    path: /packages/{id}
+    path: /activities/
     defaults: {_controller: AppBundle:Front:PackageView }
+
+tea_homestay_reviews:
+    path: /guest-reviews/
+    defaults: {_controller: AppBundle:Front:Reviews }
+
+
+tea_homestay_reviews_new:
+    path: /review/
+    defaults: {_controller: AppBundle:Front:reviewNew }
 
 
 tea_homestay_galleryview:

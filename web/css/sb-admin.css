@@ -142,7 +142,7 @@ ul.alert-dropdown {
         border: none;
         border-radius: 0;
         overflow-y: auto;
-        background-color: #001932;
+        background-color:#262626;
         bottom: 0;
         overflow-x: hidden;
         padding-bottom: 40px;
@@ -251,14 +251,14 @@ ul.alert-dropdown {
     height:100% !important;
     min-height:600px;
     overflow:hidden;
-    background:url(../img/watermark.jpg) repeat-y #FFF center top;
+    background:#FFF;
     background-size: contain;
 }
 .admin-style a{ color:#111;}
 
 .navbar{
-    background:url(../img/header-bg.gif) repeat-x top #001932;
-    border-bottom:4px solid #ff8900;
+    backgroundz: #111;
+    border-bottom:4px solid #5d9d43;
     font-family: 'Montserrat', sans-serif;}
 
 .navbar-brand{color:#FFF !important;}

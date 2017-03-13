@@ -38,7 +38,7 @@ class BookingType extends AbstractType
             ))
             ->add('phone', TextType::class, array('attr' => array('placeholder' => 'Your phone number'),
                 'constraints' => array(
-                    new NotBlank(array("message" => "Please provide a valid email")),
+                    new NotBlank(array("message" => "Please provide you phone no.")),
                 )
             ))
             ->add('address', TextType::class, array('attr' => array('placeholder' => 'Your address'),

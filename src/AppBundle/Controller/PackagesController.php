@@ -35,6 +35,7 @@ class PackagesController extends Controller
     {
         $package = new Packages();
         $form = $this->createForm('AppBundle\Form\PackagesType', $package);
+        $package->setCreated(new \DateTime());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -73,6 +74,7 @@ class PackagesController extends Controller
     {
         $deleteForm = $this->createDeleteForm($package);
         $editForm = $this->createForm('AppBundle\Form\PackagesType', $package);
+        $package->setModified(new \DateTime());
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

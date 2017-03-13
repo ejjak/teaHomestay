@@ -1,0 +1,49 @@
+{% extends 'page.html.twig' %}
+{% block parallax %}
+    <div class="effect about"></div>
+{% endblock %}
+{% block body %}
+        <div class="col-lg-12">
+            <div class="content">
+                <div class="col-lg-9">
+                    <h1>Guest Reviews</h1>
+                    <a class="btn" data-popup-open="popup-1" href="#">Open Popup #1</a>
+
+                    <div class="popup" data-popup="popup-1">
+                        <div class="popup-inner">
+                            {{ render(controller('AppBundle:Front:reviewNew',{'request':app.request})) }}
+                            <a class="popup-close" data-popup-close="popup-1" href="#">x</a>
+                        </div>
+                    </div>
+                    {% for var in detail %}
+                        {% if var.action == 1 %}
+                            <div class="reviews">
+                                <div class="col-lg-2 no-gutter">
+                                    <i class="fa fa-user guest-img"></i>
+                                </div>
+                                <div class="col-lg-10 no-gutter">
+                                    <p>{{ var.review|raw }}</p>
+                                    <span class="guest">{{ var.name }} {{ var.lastname }}</span>
+                                    <span class="guest-address"> {{ var.address }}</span>
+                                </div>
+
+                            </div>
+                            {% endif %}
+
+                        {% endfor %}
+                </div>
+                <div class="col-lg-3 no-gutter">
+                    {#<div class="testimonials">#}
+                        {#<p> " A homestay like no other which exudes a sense of place like no other.#}
+                            {#The best homestay in the entire region "</p>#}
+                        {# <span>- Mr. ABCDRFG <br>#}
+                    {#- Kolkata, INDIA</span>#}
+                    {#</div>#}
+                    <div class="contact">
+                        <h1>Contact Details</h1>
+                        {{ render(controller('AppBundle:Front:Contact', {'id': 1})) }}
+                    </div>
+                </div>
+            </div>
+         </div>
+{% endblock %}

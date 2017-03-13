@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -13,7 +14,9 @@ class PackagesType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')->add('description');
+        $builder->add('title')->add('description')
+         ->add('description',CKEditorType::class, array('config_name' => 'my_config',))
+        ;
     }
     
     /**

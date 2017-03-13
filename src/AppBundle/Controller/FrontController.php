@@ -11,7 +11,9 @@ use AppBundle\Entity\Gallery;
 use AppBundle\Entity\Images;
 use AppBundle\Entity\Packages;
 use AppBundle\Entity\Pages;
+use AppBundle\Entity\Reviews;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class FrontController extends Controller
 {
@@ -35,24 +37,77 @@ class FrontController extends Controller
         ));
     }
 
-    public function PackageViewAction($id)
+    public function PackageViewAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $view = $em->getRepository('AppBundle:Packages')->find($id);
-        if ($view instanceof Packages)
-        {
-            $id = $view->getId();
-            $title = $view->getTitle();
-            $body = $view->getDescription();
+        $view = $em->getRepository('AppBundle:Packages')->findAll();
+        foreach($view as $var){
+            if ($var instanceof Packages)
+            {
+                $id = $var->getId();
+                $title = $var->getTitle();
+                $body = $var->getDescription();
+
+                $detail[]= array('id'=>$id, 'title'=>$title, 'description'=>$body);
+            }
         }
 
-//        dump($view);die;
+
+//        dump($detail);die;
         return $this->render('links/packages.html.twig', array(
-            'id' => $id,
-            'title' => $title,
-            'description' => $body,
+            'detail' => $detail
 
         ));
+    }
+
+    public function ReviewsAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $view = $em->getRepository('AppBundle:Reviews')->findBy(array(),array('id' => 'DESC'));
+        foreach($view as $var){
+            if ($var instanceof Reviews)
+            {
+                $id = $var->getId();
+                $name = $var->getName();
+                $latname = $var->getLastname();
+                $address = $var->getAddress();
+                $review = $var->getReview();
+                $action = $var->getAction();
+
+                $detail[]= array('id'=>$id, 'name'=>$name, 'lastname'=>$latname, 'address'=> $address, 'review'=>$review, 'action'=>$action);
+            }
+        }
+
+
+//        dump($detail);die;
+        return $this->render('links/reviews.html.twig', array(
+            'detail' => $detail
+
+        ));
+    }
+
+    public function reviewNewAction(Request $request)
+    {
+        $review = new Reviews();
+        $form = $this->createForm('AppBundle\Form\ReviewsType', $review);
+        $review->setCreated(new \DateTime());
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($review);
+            $em->flush($review);
+            $request->getSession()
+                ->getFlashBag()
+                ->add('success', 'Thank you for your review.');
+//            return $this->redirectToRoute('reviews_show', array('id' => $review->getId()));
+        }
+
+        return $this->render('links/write-review.html.twig', array(
+            'review' => $review,
+            'form' => $form->createView(),
+        ));
+
     }
 
     public function GalleryShowAction()

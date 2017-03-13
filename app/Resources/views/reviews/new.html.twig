@@ -1,6 +1,62 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
+<div class="col-lg-12">
+    <div class="content">
+        <h1>Review Form</h1>
+    <div class="form col-lg-6 no-gutter">
+        <div class="form-group">
+            <div class="col-lg-3">Name</div>
+            <div class="col-lg-8">
+                {{ form_widget(form.name, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(form.name) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <div class="col-lg-3">Last Name</div>
+            <div class="col-lg-8">
+                {{ form_widget(form.lastname, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(form.lastname) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <div class="col-lg-3">Email</div>
+            <div class="col-lg-8">
+                {{ form_widget(form.email, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(form.email) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <div class="col-lg-3">Phone</div>
+            <div class="col-lg-8">
+                {{ form_widget(form.phone, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(form.phone) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <div class="col-lg-3">Address</div>
+            <div class="col-lg-8">
+                {{ form_widget(form.address, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(form.address) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="form-group">
+            <div class="col-lg-3">Address</div>
+            <div class="col-lg-8">
+                {{ form_widget(form.review, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(form.review) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+
+    </div>
+        </div>
+    </div>
     <h1>Review creation</h1>
 
     {{ form_start(form) }}
