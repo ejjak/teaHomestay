@@ -1,0 +1,22 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Review creation</h1>
+
+    {{ form_start(form) }}
+    {{ form_widget(form.name) }}
+    {{ form_widget(form.lastname) }}
+    {{ form_widget(form.email) }}
+    {{ form_widget(form.phone) }}
+    {{ form_widget(form.address) }}
+    {{ form_widget(form.review) }}
+        <p style="display: none">{{ form_widget(form.action) }}</p>
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('reviews_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

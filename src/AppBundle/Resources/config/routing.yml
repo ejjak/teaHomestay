@@ -6,6 +6,22 @@ app_contact:
     resource: "@AppBundle/Resources/config/routing/contact.yml"
     prefix:   /contact
 
+app_gallery:
+    resource: "@AppBundle/Resources/config/routing/gallery.yml"
+    prefix:   /gallery
+
+app_images:
+    resource: "@AppBundle/Resources/config/routing/images.yml"
+    prefix:   /images
+
+app_packages:
+    resource: "@AppBundle/Resources/config/routing/packages.yml"
+    prefix:   /packages
+
+app_reviews:
+    resource: "@AppBundle/Resources/config/routing/reviews.yml"
+    prefix:   /reviews
+
 tea_homestay_booking:
     path: /booking
     defaults: {_controller: AppBundle:Booking:contact }
@@ -13,6 +29,16 @@ tea_homestay_booking:
 tea_homestay_pageview:
     path: /page/{id}
     defaults: {_controller: AppBundle:Front:PageView }
+
+
+tea_homestay_packageview:
+    path: /packages/{id}
+    defaults: {_controller: AppBundle:Front:PackageView }
+
+
+tea_homestay_galleryview:
+    path: /photo/gallery
+    defaults: {_controller: AppBundle:Front:GalleryShow}
 
 
 tea_homestay_contact:

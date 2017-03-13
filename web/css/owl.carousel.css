@@ -225,24 +225,24 @@
 */
 #demos .owl-carousel{margin:2rem 0}#demos .owl-carousel #demos #setup{margin-top:4rem}#demos .demo-list h5{margin:0}
 
-/*.owl-carousel-1 .item{ position:relative;}
+.owl-carousel-1 .item{ position:relative;}
 
 .owl-carousel-1 .item h3{
-	width:auto;
-	position:absolute;
-	right:0;
-	left:0;
-	bottom:-18px;
-	z-index:100;
-	padding:20px;
-	color:#b2b2b2;
-	background-color: rgba(0, 0, 0, 0.8);
-	background: rgba(0, 0, 0, 0.8);
-	}*/
+  width:auto;
+  position:absolute;
+  right:0;
+  left:0;
+  bottom:-18px;
+  z-index:100;
+  padding:20px;
+  color:#b2b2b2;
+  background-color: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.8);
+}
 
 .owl-carousel-3{
-	padding:0;
-	text-align:center;
-	}
+  padding:0;
+  text-align:center;
+}
 
 .owl-carousel-3 h3{ color:#A12C1F;}

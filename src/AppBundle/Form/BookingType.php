@@ -10,6 +10,7 @@ namespace AppBundle\Form;
 
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -29,22 +30,60 @@ class BookingType extends AbstractType
                     new NotBlank(array("message" => "Please provide your name")),
                 )
             ))
-            ->add('subject', TextType::class, array('attr' => array('placeholder' => 'Subject'),
-                'constraints' => array(
-                    new NotBlank(array("message" => "Please give a Subject")),
-                )
-            ))
             ->add('email', EmailType::class, array('attr' => array('placeholder' => 'Your email address'),
                 'constraints' => array(
                     new NotBlank(array("message" => "Please provide a valid email")),
                     new Email(array("message" => "Your email doesn't seems to be valid")),
                 )
             ))
-            ->add('message', TextareaType::class, array('attr' => array('placeholder' => 'Your message here'),
+            ->add('phone', TextType::class, array('attr' => array('placeholder' => 'Your phone number'),
+                'constraints' => array(
+                    new NotBlank(array("message" => "Please provide a valid email")),
+                )
+            ))
+            ->add('address', TextType::class, array('attr' => array('placeholder' => 'Your address'),
+                'constraints' => array(
+                    new NotBlank(array("message" => "Please provide your address")),
+                )
+            ))
+            ->add('checkin', TextType::class, array('attr' => array('placeholder' => 'Check in date'),
+                'constraints' => array(
+                    new NotBlank(array("message" => "Please provide check in date")),
+                )
+            ))
+            ->add('checkout', TextType::class, array('attr' => array('placeholder' => 'Check out date'),
+                'constraints' => array(
+                    new NotBlank(array("message" => "Please provide check out in date")),
+                )
+            ))
+            ->add('roomtype', ChoiceType::class, array(
+                'placeholder' => 'Choose an option',
+                'choices' => array(
+                    'Standard' => 'Standard',
+                    'Deluxe' => 'Deluxe',
+                    'Super Deluxe ' => 'Super Deluxe ',
+                )
+            ))
+            ->add('roomplan', ChoiceType::class, array(
+                'placeholder' => 'Choose an option',
+                'choices' => array(
+                    'Ap' => 'Ap',
+                    'Map' => 'Map',
+                )
+            ))
+            ->add('adult', TextType::class, array('attr' => array('placeholder' => 'Adult')))
+            ->add('child', TextType::class, array('attr' => array('placeholder' => 'Child')))
+            ->add('roomno', TextType::class, array('attr' => array('placeholder' => 'No. of rooms'),
+                'constraints' => array(
+                    new NotBlank(array("message" => "Please provide no. of rooms")),
+                )
+            ))
+            ->add('message',TextareaType::class, array('attr' => array('placeholder' => 'Your message here'),
                 'constraints' => array(
                     new NotBlank(array("message" => "Please provide a message here")),
                 )
             ))
+
         ;
     }
 

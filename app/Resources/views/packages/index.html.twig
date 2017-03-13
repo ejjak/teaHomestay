@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <h1>Packages list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for package in packages %}
+            <tr>
+                <td><a href="{{ path('packages_show', { 'id': package.id }) }}">{{ package.id }}</a></td>
+                <td>{{ package.title }}</td>
+                <td>{{ package.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('packages_show', { 'id': package.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('packages_edit', { 'id': package.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('packages_new') }}">Create a new package</a>
+        </li>
+    </ul>
+{% endblock %}

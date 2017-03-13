@@ -1,0 +1,46 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Gallery List</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table ">
+                    {#<thead>#}
+                    {#<tr>#}
+                    {#&#123;&#35;<th><h6>Id</h6></th>&#35;&#125;#}
+                    {#<th><h6>Title</h6></th>#}
+                    {#<th><h6>Actions</h6></th>#}
+                    {#</tr>#}
+                    {#</thead>#}
+                    <tbody>
+                    {% for gallery in galleries %}
+                        <tr>
+                            {#<td width="4%"><a href="{{ path('gallery_show', { 'id': gallery.id }) }}">{{ gallery.id }}</a></td>#}
+                            <td>{{ gallery.titleName }}</td>
+                            <td width="15%">
+                                <table>
+                                    <tr>
+                                        <td width="80px">
+                                            <a href="{{ path('gallery_show', { 'id': gallery.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-eye"></i> show</a>
+                                        </td>
+                                        <td width="80px">
+                                            <a href="{{ path('gallery_edit', { 'id': gallery.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i> edit </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <a href="{{ path('gallery_new') }}" class="btn btn-md btn-default">Create a new entry</a>
+
+
+{% endblock %}

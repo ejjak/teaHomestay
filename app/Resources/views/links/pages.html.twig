@@ -1,0 +1,58 @@
+{% extends 'page.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+    {% endblock %}
+{% block parallax %}
+    {% if id == 1 %}
+        <div class="effect about"></div>
+    {% elseif id == 2 %}
+        <div class="effect tariff"></div>
+    {% elseif id == 3 %}
+    <div class="effect about"></div>
+    {% elseif id == 4 %}
+        <div class="effect location"></div>
+        {% endif %}
+
+{% endblock %}
+{% block body %}
+        <div class="col-lg-12">
+
+            <div class="content">
+                <div class="col-lg-9">
+                    <h1>{{ title }}</h1>
+                    {% if id == 3 %}
+                        <div class="col-lg-8">
+                        <div class="owl-carousel-1">
+                            <div class="item">
+                                <img src="{{ asset('img/slider/5.jpg') }}" alt="" class="img-responsive">
+                                <h3>Deluxe</h3>
+                            </div>
+                            <div class="item">
+                                <img src="{{ asset('img/slider/6.jpg') }}" alt="" class="img-responsive">
+                                <h3>Supper Deluxe</h3>
+                            </div>
+                        </div>
+                        </div>
+                    {% endif %}
+                    {{ description|raw }}
+                </div>
+                <div class="col-lg-3 no-gutter">
+                    <div class="testimonials">
+                        <p> " A homestay like no other which exudes a sense of place like no other.
+                            The best homestay in the entire region "</p>
+                         <span>- Mr. ABCDRFG <br>
+                    - Kolkata, INDIA</span>
+                    </div>
+                    <div class="contact">
+                        <h1>Contact Details</h1>
+                        {{ render(controller('AppBundle:Front:Contact', {'id': 1})) }}
+                    </div>
+                </div>
+            </div>
+         </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/owl.carousel.js') }}"></script>
+{% endblock %}

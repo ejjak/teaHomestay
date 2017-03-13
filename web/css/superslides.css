@@ -31,10 +31,10 @@
   display: block;
 }
 .slides-navigation a.prev {
-  left: 0;
+  left:20px;
 }
 .slides-navigation a.next {
-  right: 0;
+  right:20px;
 }
 
 .slides-pagination {
@@ -45,7 +45,7 @@
   width: 100%;
 }
 .slides-pagination a {
-  border: 2px solid #222;
+  border: 2px solid #FFF;
   border-radius: 15px;
   width: 10px;
   height: 10px;
@@ -61,5 +61,5 @@
   text-indent: -100%;
 }
 .slides-pagination a.current {
-  background: #222;
+  background: #f1f1f1;
 }

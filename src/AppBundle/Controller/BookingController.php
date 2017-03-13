@@ -32,9 +32,12 @@ class BookingController extends Controller
                 // Send mail
                 if($this->sendEmail($form->getData())){
 
+                    $request->getSession()
+                        ->getFlashBag()
+                        ->add('success', 'Message has been sent successfully, we will get back to you as soon as possible. Thank you!');
                     // Everything OK, redirect to wherever you want ! :
 
-                    return $this->redirectToRoute('redirect_to_somewhere_now');
+//                    return $this->redirectToRoute('redirect_to_somewhere_now');
                 }else{
                     // An error ocurred, handle
                     var_dump("Errooooor :(");
@@ -42,7 +45,7 @@ class BookingController extends Controller
             }
         }
 
-        return $this->render('contact/booking.html.twig', array(
+        return $this->render('links/booking.html.twig', array(
             'form' => $form->createView()
         ));
     }
@@ -60,12 +63,25 @@ class BookingController extends Controller
 
         $mailer = \Swift_Mailer::newInstance($transport);
 
-        $message = \Swift_Message::newInstance("Our Code World Contact Form ". $data["subject"])
+        $message = \Swift_Message::newInstance("Tea Homestay Booking from ". $data["name"])
             ->setFrom(array($myappContactMail => "Message by ".$data["name"]))
             ->setTo(array(
                 $myappContactMail => $myappContactMail
             ))
-            ->setBody($data["message"]."<br>ContactMail :".$data["email"],'text/html');
+            ->setBody(
+                    "Name: ".$data["name"].
+                    "<br><b>Email id.: </b>".$data["email"].
+                    "<br><b>Phone no.: </b>".$data["phone"].
+                    "<br><b>Address: </b>".$data["address"].
+                    "<br><b>Checkin Date: </b>".$data["checkin"].
+                    "<br><b>Checkout Date: </b>".$data["checkout"].
+                    "<br><b>Room Type: </b>".$data["roomtype"].
+                    "<br><b>Room Plan: </b>".$data["roomplan"].
+                    "<br><b>No. of guest: </b>"."Adult: ".$data["adult"]."Child :".$data["child"].
+                    "<br><b>No.of Rooms: </b>".$data["roomno"].
+                    "<br><b>Message: </b>".$data["message"]
+                ,'text/html');
+
 
         return $mailer->send($message);
     }

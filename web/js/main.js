@@ -1,8 +1,34 @@
+// OWL CAROUSEL
+
+$(document).ready(function() {
+  $('.owl-carousel-1').owlCarousel({
+    loop: true,
+    margin: 10,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true
+      },
+      600: {
+        items:1,
+        nav: false
+      },
+      1000: {
+        items:1,
+        nav: true,
+        loop: false,
+        margin:30
+      }
+    }
+  })
+})
+
 $(function () {
   $.srSmoothscroll({
     // defaults
     step: 55,
-    speed: 400,
+    speed:800,
     ease: 'swing',
     target: $('body'),
     container: $(window)
@@ -33,100 +59,8 @@ $(window).scroll(function(){
  }
 
 });
-// OWL CAROUSEL
 
-$(document).ready(function() {
-              $('.owl-carousel').owlCarousel({
-				  autoplay: true,
-    			autoPlaySpeed: 5000,
-    			autoPlayTimeout: 5000,
-   				autoplayHoverPause: true,
-                loop: true,
-				rewindNav: true,
-				dots: true,
-                responsiveClass: true,
-                responsive: {
-                  0: {
-                    items: 1,
-                    nav: false
-                  },
-                  600: {
-                    items:1,
-                    nav: false
-                  },
-                  1000: {
-                    items:1,
-                    nav: false,
-                    loop: false,
-                    margin:30,
-					dots: true
-                  }
-                }
-              })
-            })
 
-			
-
-$(document).ready(function() {
-              $('.owl-carousel-1').owlCarousel({
-				  autoplay: true,
-    			autoPlaySpeed: 5000,
-    			autoPlayTimeout: 5000,
-   				autoplayHoverPause: true,
-				lazyLoad : true,
-                loop: true,
-				dots: false,
-                margin: 10,
-                responsiveClass: true,
-                responsive: {
-                  0: {
-                    items: 1,
-                    nav: false,
-					dots:true,
-                  },
-                  600: {
-                    items:3,
-                    nav: false
-                  },
-                  1000: {
-                    items:4,
-                    nav: false,
-                    loop: false,
-                    margin:30
-                  }
-                }
-              })
-            })
-
-$(document).ready(function() {
-              $('.owl-carousel-3').owlCarousel({
-                animateOut: 'fadeOut',
-				autoplay: false,
-    			autoPlaySpeed: 5000,
-    			autoPlayTimeout: 5000,
-   				autoplayHoverPause: true,
-                loop: true,
-				dots: true,
-                margin: 10,
-                responsiveClass: true,
-                responsive: {
-                  0: {
-                    items: 1,
-                    nav: true
-                  },
-                  600: {
-                    items:1,
-                    nav: true
-                  },
-                  1000: {
-                    items:1,
-                    nav: true,
-                    loop: false,
-                    margin:30
-                  }
-                }
-              })
-            })
 
 
 // SCROLL DETECT
@@ -203,4 +137,11 @@ $(document).ready(function(){
 					advanced:{autoExpandHorizontalScroll:true}
 				});
 
+// DATEPICKER
+
+$(function(){
+  $('.datepicker').datepicker({
+    format: 'mm-dd-yyyy'
+  });
+});
 

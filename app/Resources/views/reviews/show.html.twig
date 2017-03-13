@@ -1,0 +1,57 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    {% if review.action == '1' %}
+    <h1>Review</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ review.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ review.name }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ review.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ review.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ review.phone }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ review.address }}</td>
+            </tr>
+            <tr>
+                <th>Review</th>
+                <td>{{ review.review }}</td>
+            </tr>
+{#tr            <tr>#}
+                {#<th>Action</th>#}
+                {#<td>{% if review.action == 'yes' %}Yes{% else %}No{% endif %}</td>#}
+            {#</tr>#}
+        </tbody>
+    </table>
+    {% endif %}
+    <ul>
+        <li>
+            <a href="{{ path('reviews_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('reviews_edit', { 'id': review.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

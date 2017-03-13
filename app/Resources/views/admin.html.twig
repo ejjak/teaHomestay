@@ -16,7 +16,7 @@
     <meta name="robots" content="index,follow">
     <meta name="revisit-after" content="1 weeks">
 
-    <title>ADMIN PANEL - DESM&E</title>
+    <title>ADMIN PANEL</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
@@ -69,13 +69,13 @@
                     <a href="#"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-camera-retro"></i> Gallery</a>
+                    <a href="{{ path('gallery_index') }}"><i class="fa fa-fw fa-camera-retro"></i> Gallery</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-fw fa-table"></i> Events</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-fw fa-edit"></i> Publication</a>
+                    <a href="{{ path('reviews_index') }}"><i class="fa fa-fw fa-edit"></i> Guest Reviews</a>
                 </li>
                 <li>
                     <a href="{{ path('contact_index') }}"><i class="fa fa-fw  fa-phone"></i> Contact Details</a>

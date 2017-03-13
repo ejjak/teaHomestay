@@ -35,6 +35,7 @@ class PagesController extends Controller
     {
         $page = new Pages();
         $form = $this->createForm('AppBundle\Form\PagesType', $page);
+        $page->setCreated(new \DateTime());
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -73,6 +74,7 @@ class PagesController extends Controller
     {
         $deleteForm = $this->createDeleteForm($page);
         $editForm = $this->createForm('AppBundle\Form\PagesType', $page);
+        $page->setModified(new \DateTime());
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

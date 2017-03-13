@@ -1,0 +1,84 @@
+{% extends 'page.html.twig' %}
+{% block stylesheets %}
+    {{  parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('highslide/highslide.css') }}" />
+{% endblock  %}
+{% block parallax %}
+    <div class="effect about"></div>
+{% endblock %}
+{% block body %}
+    <div class="col-lg-12">
+        <div class="content">
+            <div class="col-lg-9">
+                <div id="gallery-main">
+                   <h1>Photo Gallery</h1>
+                {% for var in response%}
+
+
+                    <h2>{{ var.title }}</h2>
+                    <ul>
+                        {% for var1 in var.images %}
+                            <li>
+                                <a href="{{ asset('uploads/Gallery/' ~ var1  ) }}" class="highslide" onclick="return hs.expand(this)">
+                                    <img src="{{ asset('uploads/Gallery/'~ var1) }}" />
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <p class="clearfix">&nbsp;</p>
+
+                {% endfor %}
+
+                </div>
+            </div>
+            <div class="col-lg-3 no-gutter">
+                <div class="testimonials">
+                    <p> " A homestay like no other which exudes a sense of place like no other.
+                        The best homestay in the entire region "</p>
+                     <span>- Mr. ABCDRFG <br>
+                    - Kolkata, INDIA</span>
+                </div>
+                <div class="contact">
+                    <h1>Contact Details</h1>
+                    {{ render(controller('AppBundle:Front:Contact', {'id': 1})) }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('highslide/highslide-with-gallery.min.js') }}"></script>
+
+    <script type="text/javascript">
+        hs.graphicsDir = '{{ asset('highslide/graphics/') }}';
+        hs.align = 'center';
+        hs.transitions = ['expand', 'crossfade'];
+        hs.fadeInOut = true;
+        hs.dimmingOpacity = 0.8;
+        hs.outlineType = 'rounded-white';
+        hs.captionEval = 'this.thumb.alt';
+        hs.marginBottom = 105; // make room for the thumbstrip and the controls
+        hs.numberPosition = 'caption';
+
+        // Add the slideshow providing the controlbar and the thumbstrip
+        hs.addSlideshow({
+            //slideshowGroup: 'group1',
+            interval: 5000,
+            repeat: false,
+            useControls: true,
+            overlayOptions: {
+                className: 'text-controls',
+                position: 'bottom center',
+                relativeTo: 'viewport',
+                offsetY: -60
+            },
+            thumbstrip: {
+                position: 'bottom center',
+                mode: 'horizontal',
+                relativeTo: 'viewport'
+            }
+        });
+    </script>
+{% endblock %}

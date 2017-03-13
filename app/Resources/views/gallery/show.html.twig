@@ -1,0 +1,44 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <table width="100%">
+
+                <tr>
+                    <th><h5>{{ titlename }}</h5></th>
+                    <td align="right">ID: {{id }}</td>
+                </tr>
+
+            </table>    </div>
+        <div class="panel-body">
+
+
+            <ul>
+                {% for var in detail%}
+
+                <li style="text-align:center; font-size:12px; float:left; border:1px solid #dbdbdb; padding:10px; margin:10px 10px 10px  0px; border-radius:5px; "><img src="{{ asset('uploads/Gallery/'~ var.path) }}" height="50" width="50"/>
+                    {#<br><a href="{{ asset('images/Gallery/' ~ var.path  ) }}">View images</a></li >#}
+
+                    {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <p class="clearfix">&nbsp;</p>
+    <div style="border-top:1px solid #dbdbdb; padding-top: 10px;">
+        <table>
+            <td>
+                <a href="{{ path('gallery_index') }}" class="btn btn-sm btn-default"><i class="fa fa-mail-reply"></i> Back to the list</a>
+            </td>
+            <td>
+                <a href="{{ path('gallery_edit', { 'id':id }) }}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i> Edit</a>
+            </td>
+            <td>
+                {{ form_start(delete_form) }}
+                <p ><button type="submit" value="Delete" class="btn btn-sm btn-default"><i class="fa  fa-trash-o"></i> Delete</button></p>
+                {{ form_end(delete_form) }}
+            </td>
+        </table>
+    </div>
+{% endblock %}

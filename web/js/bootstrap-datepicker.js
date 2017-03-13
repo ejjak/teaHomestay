@@ -476,7 +476,7 @@
 var nowTemp = new Date();
 var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
  
-var checkin = $('#dpd1').datepicker({
+var checkin = $('.dpd1').datepicker({
   onRender: function(date) {
     return date.valueOf() < now.valueOf() ? 'disabled' : '';
   }
@@ -487,9 +487,9 @@ var checkin = $('#dpd1').datepicker({
     checkout.setValue(newDate);
   }
   checkin.hide();
-  $('#dpd2')[0].focus();
+  $('.dpd2')[0].focus();
 }).data('datepicker');
-var checkout = $('#dpd2').datepicker({
+var checkout = $('.dpd2').datepicker({
   onRender: function(date) {
     return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
   }

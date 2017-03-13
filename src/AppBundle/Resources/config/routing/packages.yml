@@ -1,0 +1,24 @@
+packages_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Packages:index" }
+    methods:  GET
+
+packages_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Packages:show" }
+    methods:  GET
+
+packages_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Packages:new" }
+    methods:  [GET, POST]
+
+packages_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Packages:edit" }
+    methods:  [GET, POST]
+
+packages_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Packages:delete" }
+    methods:  DELETE
