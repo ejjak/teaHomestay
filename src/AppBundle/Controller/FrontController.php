@@ -160,4 +160,27 @@ class FrontController extends Controller
         ));
     }
 
+
+    public function PackagesListAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $view = $em->getRepository('AppBundle:Packages')->findBy(array(),array('id' => 'DESC'));
+        foreach($view as $var){
+            if ($var instanceof Packages)
+            {
+                $id = $var->getId();
+                $title = $var->getTitle();
+
+                $detail[]= array('id'=>$id, 'title'=>$title);
+            }
+        }
+
+
+//        dump($detail);die;
+        return $this->render('links/package-list.html.twig', array(
+            'detail' => $detail
+
+        ));
+    }
+
 }

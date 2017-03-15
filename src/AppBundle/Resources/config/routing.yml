@@ -53,3 +53,7 @@ tea_homestay_galleryview:
 tea_homestay_contact:
     path: /contact_show/{id}
     defaults: {_controller: AppBundle:Front:Contact}
+
+tea_homestay_packagelist:
+    path: /package-list
+    defaults: {_controller: AppBundle:Front:PackagesList}

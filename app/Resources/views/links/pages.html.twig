@@ -1,8 +1,8 @@
 {% extends 'page.html.twig' %}
 {% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
-    {% endblock %}
+    {{  parent() }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('highslide/highslide.css') }}" />
+{% endblock  %}
 {% block parallax %}
     {% if id == 1 %}
         <div class="effect about"></div>
@@ -20,22 +20,38 @@
 
             <div class="content">
                 <div class="col-lg-9">
-                    <h1>{{ title }}</h1>
+                    <h1><span>{{ title }}</span></h1>
                     {% if id == 3 %}
-                        <div class="col-lg-8">
-                        <div class="owl-carousel-1">
-                            <div class="item">
-                                <img src="{{ asset('img/slider/5.jpg') }}" alt="" class="img-responsive">
-                                <h3>Deluxe</h3>
-                            </div>
-                            <div class="item">
-                                <img src="{{ asset('img/slider/6.jpg') }}" alt="" class="img-responsive">
-                                <h3>Supper Deluxe</h3>
-                            </div>
-                        </div>
+                        <div id="gallery-main">
+                                <ul>
+                                        <li>
+                                            <a href="{{ asset('img/rooms/1.jpg' ) }}" class="highslide" onclick="return hs.expand(this)">
+                                                <img src="{{ asset('img/rooms/1.jpg') }}" />
+                                            </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ asset('img/rooms/2.jpg' ) }}" class="highslide" onclick="return hs.expand(this)">
+                                            <img src="{{ asset('img/rooms/2.jpg') }}" />
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ asset('img/rooms/3.jpg' ) }}" class="highslide" onclick="return hs.expand(this)">
+                                            <img src="{{ asset('img/rooms/3.jpg') }}" />
+                                        </a>
+                                    </li>
+
+                                </ul>
+                                <p class="clearfix">&nbsp;</p>
+
                         </div>
                     {% endif %}
                     {{ description|raw }}
+                    {% if id == 4 %}
+                        <br>
+                        <div class="divider"></div>
+                        <br>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24575.716809611746!2d88.17805499578076!3d26.922160591101047!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e4331f0105b837%3A0x6183247549b48721!2sTea+village+Home+stay+and+cottage!5e0!3m2!1sen!2sin!4v1489593825413" width="100%" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    {% endif %}
                 </div>
                 <div class="col-lg-3 no-gutter">
                     <div class="testimonials">
@@ -54,5 +70,36 @@
 {% endblock %}
 {% block javascripts %}
     {{ parent() }}
-    <script src="{{ asset('js/owl.carousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('highslide/highslide-with-gallery.min.js') }}"></script>
+
+    <script type="text/javascript">
+        hs.graphicsDir = '{{ asset('highslide/graphics/') }}';
+        hs.align = 'center';
+        hs.transitions = ['expand', 'crossfade'];
+        hs.fadeInOut = true;
+        hs.dimmingOpacity = 0.8;
+        hs.outlineType = 'rounded-white';
+        hs.captionEval = 'this.thumb.alt';
+        hs.marginBottom = 105; // make room for the thumbstrip and the controls
+        hs.numberPosition = 'caption';
+
+        // Add the slideshow providing the controlbar and the thumbstrip
+        hs.addSlideshow({
+            //slideshowGroup: 'group1',
+            interval: 5000,
+            repeat: false,
+            useControls: true,
+            overlayOptions: {
+                className: 'text-controls',
+                position: 'bottom center',
+                relativeTo: 'viewport',
+                offsetY: -60
+            },
+            thumbstrip: {
+                position: 'bottom center',
+                mode: 'horizontal',
+                relativeTo: 'viewport'
+            }
+        });
+    </script>
 {% endblock %}
