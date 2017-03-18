@@ -145,7 +145,7 @@
         <div class="form-group">
             <div class="col-lg-3">You Review</div>
             <div class="col-lg-8">
-                {{ form_widget(form.review, {'attr':{'class': 'form-control'}}) }}
+                {{ form_widget(form.review, {'attr':{'class': 'form-control', 'maxlength': '300'}}) }}
                 {{ form_errors(form.review) }}
             </div>
         </div>

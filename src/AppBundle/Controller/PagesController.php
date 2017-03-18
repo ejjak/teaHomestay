@@ -79,6 +79,9 @@ class PagesController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+            $request->getSession()
+                ->getFlashBag()
+                ->add('success', 'Page has been successfully updated !');
 
             return $this->redirectToRoute('pages_edit', array('id' => $page->getId()));
         }

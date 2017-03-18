@@ -1,21 +1,50 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Package edit</h1>
-
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h5>Package Edit</h5>
+    </div>
+    <div class="panel-body">
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+        <table width="100%">
+            <tbody>
+            <tr>
+                <th><h6>Title</h6></th>
+                <td>{{ form_widget(edit_form.title, {'attr':{'class': 'form-control'}}) }}</td>
+            </tr>
+            <tr>
+                <th>&nbsp;</th>
+                <td>&nbsp;</td>
+            </tr>
+            <tr>
 
-    <ul>
-        <li>
-            <a href="{{ path('packages_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+                <td colspan="2"> {{ form_widget(edit_form.description, {'attr':{'class': 'form-control'}}) }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <input type="submit" value="Edit" class="add_block black x-small btn btn-sm btn-primary" />
+    {{ form_end(edit_form) }}
+</div>
+    </div>
+    <div style="border-top:1px solid #dbdbdb; padding-top: 10px;">
+        <table>
+            <td>
+                <a href="{{ path('packages_index') }}" class="btn btn-sm btn-default"><i class="fa fa-mail-reply"></i> Back to the list</a>
+            </td>
+            <td>
+                {{ form_start(delete_form) }}
+                <p ><button type="submit" value="Delete" class="btn btn-sm btn-default"><i class="fa  fa-trash-o"></i> Delete</button></p>
+                {{ form_end(delete_form) }}
+            </td>
+        </table>
+    </div>
 {% endblock %}

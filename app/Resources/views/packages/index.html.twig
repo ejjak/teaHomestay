@@ -1,41 +1,48 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Packages list</h1>
-
-    <table>
-        <thead>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h5>Package List</h5>
+    </div>
+    <div class="panel-body">
+        <table class="table table-bordered">
+            <thead>
             <tr>
                 <th>Id</th>
                 <th>Title</th>
-                <th>Description</th>
                 <th>Actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for package in packages %}
-            <tr>
-                <td><a href="{{ path('packages_show', { 'id': package.id }) }}">{{ package.id }}</a></td>
-                <td>{{ package.title }}</td>
-                <td>{{ package.description }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('packages_show', { 'id': package.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('packages_edit', { 'id': package.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            {% for package in packages %}
+                <tr>
+                    <td><a href="{{ path('packages_show', { 'id': package.id }) }}">{{ package.id }}</a></td>
+                    <td>{{ package.title }}</td>
+                    <td width="15%">
+                        <table>
+                            <tr>
+                                <td>
+                                    <a href="{{ path('packages_show', { 'id': package.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-eye"></i>show</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('packages_edit', { 'id': package.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i>edit</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </div>
+
+
 
     <ul>
         <li>
-            <a href="{{ path('packages_new') }}">Create a new package</a>
+            <a href="{{ path('packages_new') }}" class="btn btn-md btn-default">Create a new entry</a>
         </li>
     </ul>
 {% endblock %}

@@ -1,36 +1,43 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Package</h1>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <table width="100%">
+
+            <tr>
+                <th><h5>{{ package.title }}</h5></th>
+                <td align="right">ID: {{ package.id }}</td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="panel-body">
 
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ package.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ package.title }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ package.description }}</td>
+                <td>{{ package.description|raw }}</td>
             </tr>
         </tbody>
     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('packages_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('packages_edit', { 'id': package.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+</div>
+    </div>
+    <div style="border-top:1px solid #dbdbdb; padding-top: 10px;">
+        <table>
+            <tr>
+                <td>
+                    <a href="{{ path('packages_index') }}" class="btn btn-sm btn-default"><i class="fa fa-mail-reply"></i> Back to the list</a>
+                </td>
+                <td>
+                    <a href="{{ path('packages_edit', { 'id': package.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i> Edit</a>
+                </td>
+                <td>
+                    {{ form_start(delete_form) }}
+                    <p ><button type="submit" value="Delete" class="btn btn-sm btn-default"><i class="fa  fa-trash-o"></i> Delete</button></p>
+                    {{ form_end(delete_form) }}
+                </td>
+            </tr>
+        </table>
+    </div>
 {% endblock %}

@@ -1,21 +1,64 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Contact edit</h1>
-
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('contact_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success">
+            {% for msg in app.session.flashBag.get('success') %}
+                {{ msg }}
+            {% endfor %}
+        </div>
+    {% endif %}
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <th><h5>Contact Edit</h5></th>
+    </div>
+    <div class="form panel-body">
+        {{ form_start(edit_form) }}
+            <div class="form-group">
+                <div class="col-lg-3">Phone</div>
+                <div class="col-lg-8">
+                    {{ form_widget(edit_form.phone, {'attr':{'class': 'form-control'}}) }}
+                    {{ form_errors(edit_form.phone) }}
+                </div>
+            </div>
+        <div class="clearfix"></div>
+        <br>
+        <div class="form-group">
+            <div class="col-lg-3">Email</div>
+            <div class="col-lg-8">
+                {{ form_widget(edit_form.email, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(edit_form.email) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br>
+        <div class="form-group">
+            <div class="col-lg-3">Landline</div>
+            <div class="col-lg-8">
+                {{ form_widget(edit_form.landline, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(edit_form.landline) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br>
+        <div class="form-group">
+            <div class="col-lg-3">Address</div>
+            <div class="col-lg-8">
+                {{ form_widget(edit_form.address, {'attr':{'class': 'form-control'}}) }}
+                {{ form_errors(edit_form.address) }}
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <br>
+        <input type="submit" value="Edit" class="add_block black x-small btn btn-sm btn-primary" />
+        {{ form_end(edit_form) }}
+    </div>
+    </div>
+    <div style="border-top:1px solid #dbdbdb; padding-top: 10px;">
+        <table>
+            <td>
+                <a href="{{ path('contact_index') }}" class="btn btn-sm btn-default"><i class="fa fa-mail-reply"></i> Back to the list</a>
+            </td>
+        </table>
+    </div>
 {% endblock %}

@@ -60,6 +60,31 @@ class FrontController extends Controller
         ));
     }
 
+    public function ReviewsScrollAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $view = $em->getRepository('AppBundle:Reviews')->findBy(array(),array('id' => 'DESC'));
+        foreach($view as $var){
+            if ($var instanceof Reviews)
+            {
+                $id = $var->getId();
+                $review = $var->getReview();
+                $name = $var->getName();
+                $lastname = $var->getLastname();
+                $address = $var->getAddress();
+
+                $detail[]= array('id'=>$id, 'review'=>$review, 'name'=>$name, 'lastname'=>$lastname, 'address'=>$address);
+            }
+        }
+
+
+//        dump($detail);die;
+        return $this->render('links/review-scroll.html.twig', array(
+            'detail' => $detail
+
+        ));
+    }
+
     public function ReviewsAction()
     {
         $em = $this->getDoctrine()->getManager();

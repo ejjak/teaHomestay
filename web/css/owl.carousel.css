@@ -216,14 +216,13 @@
 }
 
 
-.owl-theme .owl-controls{margin-top:15px;text-align:left;-webkit-tap-highlight-color:transparent}.owl-theme .owl-controls .owl-nav [class*=owl-]{color:#000;font-size:14px;margin:5px;padding:4px 7px;background:none; border:1px solid #b2b2b2; display:inline-block;cursor:pointer;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.owl-theme .owl-controls .owl-nav [class*=owl-]:hover{background:#000; border:1px solid #FFF; color:#fff;text-decoration:none}.owl-theme .owl-controls .owl-nav .disabled{opacity:.5;cursor:default}.owl-theme .owl-dots .owl-dot{display:inline-block;zoom:1;*display:inline}.owl-theme .owl-dots .owl-dot span{width:8px;height:8px;margin:0 7px;background:#d6d6d6;display:block;-webkit-backface-visibility:visible;-webkit-transition:opacity 200ms ease;-moz-transition:opacity 200ms ease;-ms-transition:opacity 200ms ease;-o-transition:opacity 200ms ease;transition:opacity 200ms ease;-webkit-border-radius:30px;-moz-border-radius:30px;border-radius:30px}.owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot:hover span{background:#000}
-
+.owl-theme .owl-controls{margin-top:0px;text-align:left;-webkit-tap-highlight-color:transparent}.owl-theme .owl-controls .owl-nav [class*=owl-]{color:#000;font-size:14px;margin:5px;padding:4px 7px;background:none; border:1px solid #b2b2b2; display:inline-block;cursor:pointer;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}.owl-theme .owl-controls .owl-nav [class*=owl-]:hover{background:#000; border:1px solid #FFF; color:#fff;text-decoration:none}.owl-theme .owl-controls .owl-nav .disabled{opacity:.5;cursor:default}.owl-theme .owl-dots .owl-dot{display:inline-block;zoom:1;*display:inline}.owl-theme .owl-dots .owl-dot span{width:8px;height:8px;margin:0 7px;background:#d6d6d6;display:block;-webkit-backface-visibility:visible;-webkit-transition:opacity 200ms ease;-moz-transition:opacity 200ms ease;-ms-transition:opacity 200ms ease;-o-transition:opacity 200ms ease;transition:opacity 200ms ease;-webkit-border-radius:30px;-moz-border-radius:30px;border-radius:30px}.owl-theme .owl-dots .owl-dot.active span,.owl-theme .owl-dots .owl-dot:hover span{background:#000}
 
 /*.item{background:#ff3f4d}
 
 .item{height:10rem;background:#4DC7A0;padding:1rem}#demos .owl-carousel .item h4{color:#FFF;font-weight:400;margin-top:0rem}#demos .owl-carousel .item-video{height:300px}
 */
-#demos .owl-carousel{margin:2rem 0}#demos .owl-carousel #demos #setup{margin-top:4rem}#demos .demo-list h5{margin:0}
+/*#demos .owl-carousel{margin:2em 0}#demos .owl-carousel #demos #setup{margin-top:4rem}#demos .demo-list h5{margin:0}*/
 
 .owl-carousel-1 .item{ position:relative;}
 

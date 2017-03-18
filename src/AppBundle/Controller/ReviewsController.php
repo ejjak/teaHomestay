@@ -79,7 +79,9 @@ class ReviewsController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
+            $request->getSession()
+                ->getFlashBag()
+                ->add('success', 'Page has been successfully updated !');
             return $this->redirectToRoute('reviews_edit', array('id' => $review->getId()));
         }
 

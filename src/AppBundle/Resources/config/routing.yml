@@ -44,6 +44,10 @@ tea_homestay_reviews_new:
     path: /review/
     defaults: {_controller: AppBundle:Front:reviewNew }
 
+tea_homestay_short_review:
+    path: /short-review/
+    defaults: {_controller: AppBundle:Front:ReviewsScroll }
+
 
 tea_homestay_galleryview:
     path: /photo/gallery

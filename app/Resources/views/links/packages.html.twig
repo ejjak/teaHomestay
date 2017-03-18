@@ -19,10 +19,9 @@
                 </div>
                 <div class="col-lg-3 no-gutter">
                     <div class="testimonials">
-                        <p> " A homestay like no other which exudes a sense of place like no other.
-                            The best homestay in the entire region "</p>
-                         <span>- Mr. ABCDRFG <br>
-                    - Kolkata, INDIA</span>
+                        <div class="owl-carousel">
+                            {{ render(controller('AppBundle:Front:ReviewsScroll')) }}
+                        </div>
                     </div>
                     <div class="contact">
                         <h1>Contact Details</h1>
@@ -34,7 +33,6 @@
 {% endblock %}
 
 {% block javascripts %}
-{{ parent() }}
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function($) {
@@ -49,4 +47,5 @@
 			});
 		});
 	</script>
+    {{ parent() }}
 {% endblock %}

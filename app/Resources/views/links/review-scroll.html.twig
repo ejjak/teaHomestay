@@ -1,0 +1,9 @@
+{% for var in detail %}
+    <div class="item">
+       <p>"{{ (var.review|length > 110 ? var.review|slice(0, 110) ~ '&hellip;' : var.review)|raw  }}"</p>
+        <span>- {{ var.name }}
+    {{ var.lastname }}<br>
+    - {{ var.address }}<br>
+            </span>
+    </div>
+{% endfor %}

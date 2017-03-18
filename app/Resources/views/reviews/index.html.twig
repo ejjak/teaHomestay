@@ -1,55 +1,48 @@
 {% extends 'admin.html.twig' %}
 
 {% block body %}
-    <h1>Reviews list</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Page list</h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Address</th>
+                        <th>Reviews</th>
+                        <th>Show / Hide</th>
+                        <th colspan="2">Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for review in reviews %}
+                        <tr>
+                            <td>{{ review.name }}</td>
+                            <td>{{ review.lastname }}</td>
+                            <td>{{ review.email }}</td>
+                            <td>{{ review.phone }}</td>
+                            <td>{{ review.address }}</td>
+                            <td>{{ review.review|raw }}</td>
+                            <td>{% if review.action %}Yes{% else %}No{% endif %}</td>
+                            <td><a href="{{ path('reviews_show', { 'id': review.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-eye"></i>show</a></td>
+                            <td> <a href="{{ path('reviews_edit', { 'id': review.id }) }}" class="btn btn-sm btn-default"><i class="fa fa-edit"></i>edit</a></td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div></div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>Address</th>
-                <th>Review</th>
-                <th>Action</th>
-                <th>Created</th>
-                <th>Modified</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for review in reviews %}
-            <tr>
-                <td><a href="{{ path('reviews_show', { 'id': review.id }) }}">{{ review.id }}</a></td>
-                <td>{{ review.name }}</td>
-                <td>{{ review.lastname }}</td>
-                <td>{{ review.email }}</td>
-                <td>{{ review.phone }}</td>
-                <td>{{ review.address }}</td>
-                <td>{{ review.review }}</td>
-                <td>{% if review.action %}Yes{% else %}No{% endif %}</td>
-                <td>{% if review.created %}{{ review.created|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if review.modified %}{{ review.modified|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('reviews_show', { 'id': review.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('reviews_edit', { 'id': review.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
     <ul>
         <li>
-            <a href="{{ path('reviews_new') }}">Create a new review</a>
+            <a href="{{ path('reviews_new') }}" class="btn btn-default">Create a new review</a>
         </li>
     </ul>
 {% endblock %}
