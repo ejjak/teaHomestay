@@ -30,6 +30,14 @@ tea_homestay_pageview:
     path: /page/{id}
     defaults: {_controller: AppBundle:Front:PageView }
 
+tea_homestay_homepageview:
+    path: /about/{id}
+    defaults: {_controller: AppBundle:Front:HomeAboutView }
+
+tea_homestay_homewhyview:
+    path: /why/{id}
+    defaults: {_controller: AppBundle:Front:HomeWhyView }
+
 
 tea_homestay_packageview:
     path: /activities/

@@ -37,6 +37,46 @@ class FrontController extends Controller
         ));
     }
 
+    public function HomeAboutViewAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $view = $em->getRepository('AppBundle:Pages')->find($id);
+        if ($view instanceof Pages)
+        {
+            $id = $view->getId();
+            $title = $view->getTitle();
+            $body = $view->getDescription();
+        }
+
+//        dump($view);die;
+        return $this->render('links/home-about.html.twig', array(
+            'id' => $id,
+            'title' => $title,
+            'description' => $body,
+
+        ));
+    }
+
+    public function HomeWhyViewAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $view = $em->getRepository('AppBundle:Pages')->find($id);
+        if ($view instanceof Pages)
+        {
+            $id = $view->getId();
+            $title = $view->getTitle();
+            $body = $view->getDescription();
+        }
+
+//        dump($view);die;
+        return $this->render('links/home-why.html.twig', array(
+            'id' => $id,
+            'title' => $title,
+            'description' => $body,
+
+        ));
+    }
+
     public function PackageViewAction()
     {
         $em = $this->getDoctrine()->getManager();

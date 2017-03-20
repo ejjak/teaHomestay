@@ -166,6 +166,11 @@ $(document).ready(function(){
   });
 });
 
-
+// DATEPICKER
+$(function(){
+  $('.datepicker').datepicker({
+    format: 'mm-dd-yyyy'
+  });
+});
 
 

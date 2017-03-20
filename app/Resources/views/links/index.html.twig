@@ -24,9 +24,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h1>Tea Village Homestay & cottage</h1>
-                    <span>Taba Kosi & Seven Tea Gardens in one place & homestay <br>accommodation in cottage.</span>
-                    <p>Taba Kosi, a River valley , new tourist spot. about six kilometers from Mirik,in the district of Darjeeling a new tourism destination has come up, surrounded by orange orchards , Seven  tea gardens –Thurbu ,Gopal Dhara, Siyok,Turjam,Sungma and Margarjung and Okey Tea  offers facilities for  tourist with short trek, River bank walk, Village walk,Fishing,River valley Camping, Bird Watching, paragliding  Home stay, Guest house facilities are provided, rest sheds, beautiful flower gardens and park. It also has a Vishnu temple, Shiva Temple, orchid flower show emporium, inaugurated</p>
+
+                    {#<h1>Tea Village Homestay & cottage</h1>#}
+                    {{ render(controller('AppBundle:Front:HomeAboutView', {'id': 1})) }}<br>
+                    {#<span>Taba Kosi & Seven Tea Gardens in one place & homestay <br>accommodation in cottage.</span>#}
+                    {#<p>Taba Kosi, a River valley , new tourist spot. about six kilometers from Mirik,in the district of Darjeeling a new tourism destination has come up, surrounded by orange orchards , Seven  tea gardens –Thurbu ,Gopal Dhara, Siyok,Turjam,Sungma and Margarjung and Okey Tea  offers facilities for  tourist with short trek, River bank walk, Village walk,Fishing,River valley Camping, Bird Watching, paragliding  Home stay, Guest house facilities are provided, rest sheds, beautiful flower gardens and park. It also has a Vishnu temple, Shiva Temple, orchid flower show emporium, inaugurated</p>#}
                     <a href="{{ path('tea_homestay_pageview',{'id':1}) }}" class="read-more">Read more</a>
                 </div>
                 <div class="col-lg-6">
@@ -41,7 +43,9 @@
                 <div class="col-lg-9">
                     <h1>Why to visit Tabakosi ? - <span>Imperial Tea village in Darjeeling</span></h1>
                     <div class="col-lg-5 no-gutter"><img src="{{ asset('img/why-tabakosi.jpg') }}" alt="why tabakosi" class="img-responsive"></div>
-                    <div class="col-lg-6">This is a new tourism destination in the foothills in between  Darjeeling & Mirik  , about six kilometers from Mirik, in the district of Darjeeling a new tourism destination has come up, surrounded by orange orchards , Seven  tea gardens –Thurbu ,Gopal Dhara, Siyok,Turjam,Sungma and Margarjung . .<br><a href="{{ path('tea_homestay_pageview',{'id':2}) }}" class="read-more">Read more</a></div>
+                    <div class="col-lg-6">
+                        {{ render(controller('AppBundle:Front:HomeWhyView', {'id': 2})) }}
+                       <br><a href="{{ path('tea_homestay_pageview',{'id':2}) }}" class="read-more">Read more</a></div>
                 </div>
                 <div class="col-lg-3">
                     <div id="contact-box" class="hidden-xs hidden-sm hidden-md">

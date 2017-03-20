@@ -1,0 +1,2 @@
+<h1>{{ title }}</h1>
+{{ (description|length > 725 ? description|slice(0, 725) ~ '&hellip;' : description)|raw  }}

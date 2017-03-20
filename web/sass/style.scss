@@ -31,12 +31,12 @@ h1{ font-size:1.857em;}
 
 .header{
   background: #111;
-  padding:14px 0 12px 0;
+  padding:12px 0 12px 0;
   transition: all 0.4s ease;
 }
 
 .sticky{
-  padding:10px 0 0px 0;
+  padding:6px 0 0px 0;
   transition: all 0.4s ease;
 }
 
@@ -45,15 +45,18 @@ h1{ font-size:1.857em;}
 .logo {
   position:absolute;
   font-size:2.000em ;
-  padding:5px 0 0 0 ;
+  padding:7px 0 0 0 ;
   i{font-family: 'Great Vibes', cursive;}
   a{
-    color: #f1f1f1;
+    color: #5d9d43;
     text-decoration:none;
     font-family:$play-fair;
+    background:url("../img/teas.png") no-repeat top;
+    background-size:24px;
+    background-position:100px -2px;
   }
   span{
-    color:#5d9d43;
+    color:#f1f1f1;
   }
 }
 
@@ -247,7 +250,7 @@ nav[role="custom-dropdown"] {
     margin:0 0 20px 0;
   }
 
-  span{
+  strong, span{
     font-weight: bold;
   }
 }
@@ -342,7 +345,7 @@ a.view-more:hover{ color:#5d9d43;}
 
   ul{
     border-bottom:1px solid #dbdbdb;
-    padding:20px 0;
+    padding:20px 0 30px 0;
     height:100%;
     overflow:hidden;
   }
@@ -479,6 +482,7 @@ a.view-more:hover{ color:#5d9d43;}
 
     table{
       font-family: $open-sans;
+      td{ padding: 10px 0}
       tr:nth-child(even){
         background-color: #f8f8f8;
       }
@@ -594,6 +598,29 @@ footer{
   font-weight:300;
 }
 
+// MISC
+
 .accordion-toggle {cursor: pointer; border: 1px solid #dbdbdb;background: #f1f1f1; padding: 10px;}
 .accordion-content {display: none;}
 .accordion-content.default {display: block;}
+
+
+.offer{
+  color:#111;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #dbdbdb;
+ padding-bottom:20px;
+  font-family: $montserrat;
+
+  span{
+    font-size:2.6em;
+    font-family: 'Great Vibes', cursive;
+    padding:10px 0;
+    color:#5d9d43;
+    margin-right: 20px;
+  }
+
+  img{
+    width:150px;
+  }
+}
