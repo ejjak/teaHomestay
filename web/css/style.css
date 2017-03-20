@@ -534,18 +534,20 @@ a.view-more:hover {
 .parallax .about {
   /* The image used */
   background-image: url("../img/slider/1.jpg");
+  background-size: contain;
 }
-/* line 502, ../sass/style.scss */
+/* line 503, ../sass/style.scss */
 .parallax .tariff {
   /* The image used */
   background-image: url("../img/slider/1.jpg");
+  background-size: cover;
 }
-/* line 507, ../sass/style.scss */
+/* line 509, ../sass/style.scss */
 .parallax .location {
   /* The image used */
   background-image: url("../img/slider/4.jpg");
 }
-/* line 512, ../sass/style.scss */
+/* line 514, ../sass/style.scss */
 .parallax .effect {
   /* Set a specific height */
   min-height: 300px;
@@ -557,7 +559,7 @@ a.view-more:hover {
 }
 
 /* Outer */
-/* line 528, ../sass/style.scss */
+/* line 530, ../sass/style.scss */
 .popup {
   width: 100%;
   height: 100%;
@@ -570,7 +572,7 @@ a.view-more:hover {
 }
 
 /* Inner */
-/* line 540, ../sass/style.scss */
+/* line 542, ../sass/style.scss */
 .popup-inner {
   max-width: 700px;
   width: 90%;
@@ -586,7 +588,7 @@ a.view-more:hover {
 }
 
 /* Close Button */
-/* line 555, ../sass/style.scss */
+/* line 557, ../sass/style.scss */
 .popup-close {
   width: 30px;
   height: 30px;
@@ -607,7 +609,7 @@ a.view-more:hover {
   color: #fff;
 }
 
-/* line 575, ../sass/style.scss */
+/* line 577, ../sass/style.scss */
 .popup-close:hover {
   -webkit-transform: translate(50%, -50%) rotate(180deg);
   transform: translate(50%, -50%) rotate(180deg);
@@ -615,7 +617,7 @@ a.view-more:hover {
   text-decoration: none;
 }
 
-/* line 584, ../sass/style.scss */
+/* line 586, ../sass/style.scss */
 footer {
   background: #111;
   padding: 60px 0;
@@ -624,16 +626,16 @@ footer {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
 }
-/* line 585, ../sass/style.scss */
+/* line 587, ../sass/style.scss */
 footer a {
   color: #FFFFFF;
 }
-/* line 586, ../sass/style.scss */
+/* line 588, ../sass/style.scss */
 footer a:hover {
   color: #f1f1f1;
 }
 
-/* line 595, ../sass/style.scss */
+/* line 597, ../sass/style.scss */
 .accordion-toggle {
   cursor: pointer;
   border: 1px solid #dbdbdb;
@@ -641,12 +643,12 @@ footer a:hover {
   padding: 10px;
 }
 
-/* line 596, ../sass/style.scss */
+/* line 598, ../sass/style.scss */
 .accordion-content {
   display: none;
 }
 
-/* line 597, ../sass/style.scss */
+/* line 599, ../sass/style.scss */
 .accordion-content.default {
   display: block;
 }

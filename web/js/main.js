@@ -70,16 +70,7 @@ $(document).ready(function() {
   })
 })
 
-$(function () {
-  $.srSmoothscroll({
-    // defaults
-    step: 55,
-    speed:800,
-    ease: 'swing',
-    target: $('body'),
-    container: $(window)
-  })
-})
+
 // NAV
 
 $('#toggle-menu').click(function(e) {
@@ -176,18 +167,5 @@ $(document).ready(function(){
 });
 
 
-// SCROLL BAR
 
-	$(".x-scroll").mCustomScrollbar({
-					axis:"x",
-					advanced:{autoExpandHorizontalScroll:true}
-				});
-
-// DATEPICKER
-
-$(function(){
-  $('.datepicker').datepicker({
-    format: 'mm-dd-yyyy'
-  });
-});
 

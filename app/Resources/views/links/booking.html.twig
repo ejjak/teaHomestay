@@ -146,4 +146,12 @@
 {% block javascripts %}
     {{ parent() }}
     <script src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+    <script>
+        // DATEPICKER
+        $(function(){
+            $('.datepicker').datepicker({
+                format: 'mm-dd-yyyy'
+            });
+        });
+    </script>
 {% endblock %}

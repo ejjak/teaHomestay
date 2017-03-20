@@ -1,4 +1,5 @@
 {% for var in detail %}
+    {% if var.action == 1 %}
     <div class="item">
        <p>"{{ (var.review|length > 110 ? var.review|slice(0, 110) ~ '&hellip;' : var.review)|raw  }}"</p>
         <span>- {{ var.name }}
@@ -6,4 +7,5 @@
     - {{ var.address }}<br>
             </span>
     </div>
+        {% endif %}
 {% endfor %}

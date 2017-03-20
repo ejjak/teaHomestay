@@ -18,4 +18,17 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
         ]);
     }
+
+    public function adminAction()
+    {
+        return $this->render('links/admin.html.twig');
+    }
+
+//    /**
+//     * @Route("/logout" name="logout")
+//     */
+//    public function logoutAction()
+//    {
+//
+//    }
 }

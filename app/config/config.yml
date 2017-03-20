@@ -75,3 +75,11 @@ ivory_ck_editor:
     configs:
         my_config:
             allowedContent: true
+
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+            address: teavillagehomestay@gmail.com
+            sender_name: Tea Village Homestay

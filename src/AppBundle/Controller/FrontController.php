@@ -63,24 +63,30 @@ class FrontController extends Controller
     public function ReviewsScrollAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $view = $em->getRepository('AppBundle:Reviews')->findBy(array(),array('id' => 'DESC'));
-        foreach($view as $var){
-            if ($var instanceof Reviews)
-            {
-                $id = $var->getId();
-                $review = $var->getReview();
-                $name = $var->getName();
-                $lastname = $var->getLastname();
-                $address = $var->getAddress();
+        $repository = $em->getRepository('AppBundle:Reviews');
+        $query = $repository->createQueryBuilder('p')
+            ->select('p.name as name','p.lastname as lastname','p.review as review', 'p.address as address','p.action as action')
+            ->setMaxResults(4)
+            ->orderBy('p.id','DESC')
+            ->getQuery()->getScalarResult()
+            ;
+//        foreach($view as $var){
+//            if ($var instanceof Reviews)
+//            {
+//                $id = $var->getId();
+//                $review = $var->getReview();
+//                $name = $var->getName();
+//                $lastname = $var->getLastname();
+//                $address = $var->getAddress();
+//
+//                $detail[]= array('id'=>$id, 'review'=>$review, 'name'=>$name, 'lastname'=>$lastname, 'address'=>$address);
+//            }
+//        }
 
-                $detail[]= array('id'=>$id, 'review'=>$review, 'name'=>$name, 'lastname'=>$lastname, 'address'=>$address);
-            }
-        }
 
-
-//        dump($detail);die;
+//        dump($query);die;
         return $this->render('links/review-scroll.html.twig', array(
-            'detail' => $detail
+            'detail' => $query
 
         ));
     }

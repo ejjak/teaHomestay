@@ -497,11 +497,13 @@ a.view-more:hover{ color:#5d9d43;}
   .about{
     /* The image used */
     background-image: url("../img/slider/1.jpg");
+    background-size:contain;
   }
 
   .tariff{
     /* The image used */
     background-image: url("../img/slider/1.jpg");
+    background-size:cover;
   }
 
   .location{
