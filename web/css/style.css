@@ -30,7 +30,7 @@ h1 {
 /* line 32, ../sass/style.scss */
 .header {
   background: #111;
-  padding: 12px 0 12px 0;
+  padding: 11px 0 12px 0;
   transition: all 0.4s ease;
 }
 
@@ -44,7 +44,7 @@ h1 {
 .logo {
   position: absolute;
   font-size: 2em;
-  padding: 7px 0 0 0;
+  padding-top: 10px;
 }
 /* line 49, ../sass/style.scss */
 .logo i {
@@ -52,12 +52,13 @@ h1 {
 }
 /* line 50, ../sass/style.scss */
 .logo a {
+  padding: 8px 0 0 0;
   color: #5d9d43;
   text-decoration: none;
   font-family: "Playfair Display", serif;
   background: url("../img/teas.png") no-repeat top;
   background-size: 24px;
-  background-position: 100px -2px;
+  background-position: 95px -1px;
 }
 /* line 58, ../sass/style.scss */
 .logo span {
@@ -163,7 +164,7 @@ nav[role="custom-dropdown"] ul {
 /* line 152, ../sass/style.scss */
 nav[role="custom-dropdown"] ul > li {
   float: left;
-  padding: 5px 0;
+  padding: 6px 0;
   width: auto;
   text-align: center;
   transition-duration: .3s;
