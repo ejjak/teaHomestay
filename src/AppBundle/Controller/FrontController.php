@@ -106,6 +106,8 @@ class FrontController extends Controller
         $repository = $em->getRepository('AppBundle:Reviews');
         $query = $repository->createQueryBuilder('p')
             ->select('p.name as name','p.lastname as lastname','p.review as review', 'p.address as address','p.action as action')
+            ->where('p.action = :action')
+            ->setParameter('action', 1)
             ->setMaxResults(4)
             ->orderBy('p.id','DESC')
             ->getQuery()->getScalarResult()
@@ -171,7 +173,7 @@ class FrontController extends Controller
             $request->getSession()
                 ->getFlashBag()
                 ->add('success', 'Thank you for your review.');
-//            return $this->redirectToRoute('reviews_show', array('id' => $review->getId()));
+//            return $this->redirectToRoute('tea_homestay_reviews', array('id' => $review->getId()));
         }
 
         return $this->render('links/write-review.html.twig', array(

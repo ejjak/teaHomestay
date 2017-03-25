@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Contact
@@ -23,14 +24,17 @@ class Contact
 
     /**
      * @var string
-     *
+     * @Assert\Regex("/^[789]\d{9}$/", message="Please insert a valid phone number")
      * @ORM\Column(name="phone", type="string", length=255)
      */
     private $phone;
 
     /**
      * @var string
-     *
+     * @Assert\Email(
+     *     message = "The email '{{ value }}' is not a valid email.",
+     *     checkMX = true
+     * )
      * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;

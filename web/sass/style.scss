@@ -31,32 +31,34 @@ h1{ font-size:1.857em;}
 
 .header{
   background: #111;
-  padding:11px 0 12px 0;
+  padding:0 0 15px 0;
   transition: all 0.4s ease;
 }
 
 .sticky{
-  padding:6px 0 0px 0;
+  padding:0px 0 0px 0;
   transition: all 0.4s ease;
+  .logo{
+    top:-5px;
+    transition: all 0.4s ease-out;
+  }
 }
 
 // LOGO
 
 .logo {
   position:absolute;
+  text-indent:-9999px;
   font-size:2.000em ;
-  padding-top:10px;
-  i{font-family: 'Great Vibes', cursive;}
-  a{padding:8px 0 0 0 ;
+  transition: all 0.4s ease;
+  a{
+    display: block;
+    padding:20px 65px ;
     color: #5d9d43;
     text-decoration:none;
     font-family:$play-fair;
-    background:url("../img/teas.png") no-repeat top;
-    background-size:24px;
-    background-position:95px -1px;
-  }
-  span{
-    color:#f1f1f1;
+    background:url("../img/logo.png") no-repeat top;
+    background-size:230px;
   }
 }
 
@@ -151,7 +153,7 @@ nav[role="custom-dropdown"] {
 
     > li {
       float:left;
-      padding:6px 0;
+      padding:30px 0 0 0;
       width:auto;
       text-align:center;
       transition-duration: .3s;
@@ -451,9 +453,11 @@ a.view-more:hover{ color:#5d9d43;}
       //font-family: $open-sans !important;
       .clearfix{ margin-bottom:20px;}
 
+      input.review-submit{ background:#f1f1f1; border:1px solid #dbdbdb; color: #111; padding: 0 20px; @include border-radius(5px);}
+
       .textarea{
 
-        min-height:100px !important;
+        min-height:150px !important;
       }
     }
 
@@ -506,7 +510,7 @@ a.view-more:hover{ color:#5d9d43;}
 
   .tariff{
     /* The image used */
-    background-image: url("../img/slider/1.jpg");
+    background-image: url("../img/slider/2.jpg");
     background-size:cover;
   }
 
