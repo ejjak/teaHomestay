@@ -24,7 +24,6 @@ class Contact
 
     /**
      * @var string
-     * @Assert\Regex("/^[789]\d{9}$/", message="Please insert a valid phone number")
      * @ORM\Column(name="phone", type="string", length=255)
      */
     private $phone;

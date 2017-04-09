@@ -1,3 +1,35 @@
-{% for var in detail %}
-    <li><a href="{{ path('tea_homestay_packageview',{'id':var.id}) }}">{{ var.title }}</a></li>
-{% endfor %}
+
+{% extends 'page.html.twig' %}
+{% block parallax %}
+    <div class="effect about"></div>
+{% endblock %}
+{% block body %}
+    <div class="col-lg-12">
+        <div class="content">
+            <div class="col-lg-9">
+                <h1><span>Activities</span></h1>
+
+                <ul class="package-list-main">
+                    {#{% for var in detail %}#}
+                    {#<h2 class="accordion-toggle">{{ title }}</h2>#}
+                    {% for var in detail %}
+                        <li>
+                            <a href="{{ path('tea_homestay_packageview',{'id':var.id}) }}">{{ var.title }}</a></li>
+                    {% endfor %}
+                    {#{% endfor %}#}
+                </ul>
+            </div>
+            <div class="col-lg-3 no-gutter">
+                <div class="testimonials">
+                    <div class="owl-carousel">
+                        {{ render(controller('AppBundle:Front:ReviewsScroll')) }}
+                    </div>
+                </div>
+                <div class="contact">
+                    <h1>Contact Details</h1>
+                    {{ render(controller('AppBundle:Front:Contact', {'id': 1})) }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

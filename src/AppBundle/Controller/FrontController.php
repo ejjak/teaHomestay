@@ -77,25 +77,27 @@ class FrontController extends Controller
         ));
     }
 
-    public function PackageViewAction()
+    public function PackageViewAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $view = $em->getRepository('AppBundle:Packages')->findAll();
-        foreach($view as $var){
-            if ($var instanceof Packages)
+        $view = $em->getRepository('AppBundle:Packages')->find($id);
+//        foreach($view as $var){
+            if ($view instanceof Packages)
             {
-                $id = $var->getId();
-                $title = $var->getTitle();
-                $body = $var->getDescription();
+                $id = $view->getId();
+                $title = $view->getTitle();
+                $body = $view->getDescription();
 
-                $detail[]= array('id'=>$id, 'title'=>$title, 'description'=>$body);
+//                $detail[]= array('id'=>$id, 'title'=>$title, 'description'=>$body);
             }
-        }
+//        }
 
 
 //        dump($detail);die;
         return $this->render('links/packages.html.twig', array(
-            'detail' => $detail
+            'id'=>$id,
+            'title' => $title,
+            'description'=>$body
 
         ));
     }
@@ -251,6 +253,28 @@ class FrontController extends Controller
 
 //        dump($detail);die;
         return $this->render('links/package-list.html.twig', array(
+            'detail' => $detail
+
+        ));
+    }
+
+    public function PackagesListHomeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $view = $em->getRepository('AppBundle:Packages')->findBy(array(),array('id' => 'DESC'));
+        foreach($view as $var){
+            if ($var instanceof Packages)
+            {
+                $id = $var->getId();
+                $title = $var->getTitle();
+
+                $detail[]= array('id'=>$id, 'title'=>$title);
+            }
+        }
+
+
+//        dump($detail);die;
+        return $this->render('links/package-list-home.html.twig', array(
             'detail' => $detail
 
         ));

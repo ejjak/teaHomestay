@@ -307,9 +307,10 @@ a.view-more:hover{ color:#5d9d43;}
   background: #438831;
   color:#f1f1f1;
   padding:60px 40px;
+  min-height: 400px;
 
   h1{
-    font-size: 2.571em;
+    font-size: 2.371em;
   }
 
   p{
@@ -632,5 +633,20 @@ footer{
 
   img{
     width:150px;
+  }
+}
+
+.package-list{
+a{
+  color:#111;
+  text-decoration: underline;
+}
+  a:hover{color:#5d9d43;}
+}
+
+.package-list-main{
+  a{ color: #111;}
+  li{
+    border-bottom: 1px solid #dbdbdb;
   }
 }

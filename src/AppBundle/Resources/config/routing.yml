@@ -40,7 +40,7 @@ tea_homestay_homewhyview:
 
 
 tea_homestay_packageview:
-    path: /activities/
+    path: /activities/{id}
     defaults: {_controller: AppBundle:Front:PackageView }
 
 tea_homestay_reviews:
@@ -69,6 +69,10 @@ tea_homestay_contact:
 tea_homestay_packagelist:
     path: /package-list
     defaults: {_controller: AppBundle:Front:PackagesList}
+
+tea_homestay_packagelisthome:
+    path: /package-list-home
+    defaults: {_controller: AppBundle:Front:PackagesListHome}
 
 tea_homestay_admin:
     path: /admin

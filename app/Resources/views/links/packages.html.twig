@@ -9,13 +9,20 @@
                     <h1><span>Activities</span></h1>
 
 					<div id="accordion">
-                        {% for var in detail %}
-                            <h2 class="accordion-toggle">{{ var.title }}</h2>
+                        {#{% for var in detail %}#}
+                            <h2>{{ title }}</h2>
                             <div class="accordion-content default">
-                                {{ var.description|raw }}
+                                {{ description|raw }}
                             </div>
-                        {% endfor %}
+                        {#{% endfor %}#}
 					</div>
+<hr>
+                    <div class="package-list">
+                        <strong>Other Activities :</strong>
+                        <ul>
+                            {{ render(controller('AppBundle:Front:PackagesListHome')) }}
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-lg-3 no-gutter">
                     <div class="testimonials">
