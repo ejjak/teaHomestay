@@ -31,6 +31,13 @@ class Packages
     /**
      * @var string
      *
+     * @ORM\Column(name="imageurl", type="string", length=255)
+     */
+    private $imageurl;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="description", type="text")
      */
     private $description;
@@ -92,6 +99,30 @@ class Packages
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set imageurl
+     *
+     * @param string $imageurl
+     *
+     * @return Packages
+     */
+    public function setImageurl($imageurl)
+    {
+        $this->imageurl = $imageurl;
+
+        return $this;
+    }
+
+    /**
+     * Get imageurl
+     *
+     * @return string
+     */
+    public function getImageurl()
+    {
+        return $this->imageurl;
     }
 
     /**

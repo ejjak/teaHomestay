@@ -614,7 +614,10 @@ footer{
 .accordion-toggle {cursor: pointer; border: 1px solid #dbdbdb;background: #f1f1f1; padding: 10px;}
 .accordion-content {display: none;}
 .accordion-content.default {display: block;}
-
+#accordion{
+  h2{ border-bottom: 1px solid #dbdbdb; margin-bottom: 20px;font-size:1.4em;}
+  img{float: left; margin-right:10px;}
+}
 
 .offer{
   color:#111;
@@ -645,8 +648,29 @@ a{
 }
 
 .package-list-main{
+  overflow: hidden;
+  height:100%;
+
   a{ color: #111;}
   li{
-    border-bottom: 1px solid #dbdbdb;
+    margin: 0 auto;
+    line-height: 0;
+    display:inline;
+    width:250px;
+    height:230px;
+    float: left;
+    clear:right;
+    border: 1px solid #dbdbdb;
+    margin:0 15px 15px 0;
+    @include border-radius(5px);
+    h3{
+      display: block;
+      padding:10px;
+      line-height: normal;
+      font-weight: bold;
+    }
+    img{
+
+    }
   }
 }

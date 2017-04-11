@@ -14,7 +14,9 @@
                     {#<h2 class="accordion-toggle">{{ title }}</h2>#}
                     {% for var in detail %}
                         <li>
-                            <a href="{{ path('tea_homestay_packageview',{'id':var.id}) }}">{{ var.title }}</a></li>
+                            <img src="{{ asset('uploads/'~ var.image) }}" width="100%" height="150px" />
+                            <h3><a href="{{ path('tea_homestay_packageview',{'id':var.id}) }}">{{ var.title }}</a></h3>
+                        </li>
                     {% endfor %}
                     {#{% endfor %}#}
                 </ul>

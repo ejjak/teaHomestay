@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Packages;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -39,11 +40,18 @@ class PackagesController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $file = $package->getImageurl();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move(
+                $this->getParameter('directory'),
+                $fileName
+            );
+            $package->setImageurl($fileName);
             $em = $this->getDoctrine()->getManager();
             $em->persist($package);
             $em->flush($package);
 
-            return $this->redirectToRoute('packages_show', array('id' => $package->getId()));
+            return $this->redirectToRoute('packages_index', array('id' => $package->getId()));
         }
 
         return $this->render('packages/new.html.twig', array(
@@ -72,13 +80,36 @@ class PackagesController extends Controller
      */
     public function editAction(Request $request, Packages $package)
     {
+        $fileName=$package->getImageurl();
         $deleteForm = $this->createDeleteForm($package);
+        $package->setImageurl(
+            new File($this->getParameter('directory').'/'.$package->getImageurl())
+        );
         $editForm = $this->createForm('AppBundle\Form\PackagesType', $package);
         $package->setModified(new \DateTime());
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $file = $package->getImageurl();
+            if ($file)
+            {
+                $file_path='uploads/'.$fileName;
+                unlink($file_path);
+                $fileName1 = md5(uniqid()).'.'.$file->guessExtension();
+                $file->move(
+                    $this->getParameter('directory'),
+                    $fileName1
+                );
+                $package->setImageurl($fileName1);
+
+            }
+            else
+            {
+                $package->setImageurl($fileName);
+            }
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($package);
+            $em->flush();
             $request->getSession()
                 ->getFlashBag()
                 ->add('success', 'Page has been successfully updated !');
@@ -101,9 +132,15 @@ class PackagesController extends Controller
     {
         $form = $this->createDeleteForm($package);
         $form->handleRequest($request);
+        $fileName=$package->getImageurl();
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            if($fileName)
+            {
+                $file_path='uploads/'.$fileName;
+                unlink($file_path);
+            }
             $em->remove($package);
             $em->flush();
         }

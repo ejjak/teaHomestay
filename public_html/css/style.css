@@ -677,7 +677,19 @@ footer a:hover {
   display: block;
 }
 
+/* line 618, ../sass/style.scss */
+#accordion h2 {
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+  font-size: 1.4em;
+}
 /* line 619, ../sass/style.scss */
+#accordion img {
+  float: left;
+  margin-right: 10px;
+}
+
+/* line 622, ../sass/style.scss */
 .offer {
   color: #111;
   margin-bottom: 30px;
@@ -685,7 +697,7 @@ footer a:hover {
   padding-bottom: 20px;
   font-family: "Montserrat", sans-serif;
 }
-/* line 626, ../sass/style.scss */
+/* line 629, ../sass/style.scss */
 .offer span {
   font-size: 2.6em;
   font-family: 'Great Vibes', cursive;
@@ -693,26 +705,49 @@ footer a:hover {
   color: #5d9d43;
   margin-right: 20px;
 }
-/* line 634, ../sass/style.scss */
+/* line 637, ../sass/style.scss */
 .offer img {
   width: 150px;
 }
 
-/* line 640, ../sass/style.scss */
+/* line 643, ../sass/style.scss */
 .package-list a {
   color: #111;
   text-decoration: underline;
 }
-/* line 644, ../sass/style.scss */
+/* line 647, ../sass/style.scss */
 .package-list a:hover {
   color: #5d9d43;
 }
 
-/* line 648, ../sass/style.scss */
+/* line 650, ../sass/style.scss */
+.package-list-main {
+  overflow: hidden;
+  height: 100%;
+}
+/* line 654, ../sass/style.scss */
 .package-list-main a {
   color: #111;
 }
-/* line 649, ../sass/style.scss */
+/* line 655, ../sass/style.scss */
 .package-list-main li {
-  border-bottom: 1px solid #dbdbdb;
+  margin: 0 auto;
+  line-height: 0;
+  display: inline;
+  width: 250px;
+  height: 230px;
+  float: left;
+  clear: right;
+  border: 1px solid #dbdbdb;
+  margin: 0 15px 15px 0;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 666, ../sass/style.scss */
+.package-list-main li h3 {
+  display: block;
+  padding: 10px;
+  line-height: normal;
+  font-weight: bold;
 }

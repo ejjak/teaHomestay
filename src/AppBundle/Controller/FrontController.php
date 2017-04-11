@@ -86,6 +86,7 @@ class FrontController extends Controller
             {
                 $id = $view->getId();
                 $title = $view->getTitle();
+                $img = $view->getImageurl();
                 $body = $view->getDescription();
 
 //                $detail[]= array('id'=>$id, 'title'=>$title, 'description'=>$body);
@@ -97,6 +98,7 @@ class FrontController extends Controller
         return $this->render('links/packages.html.twig', array(
             'id'=>$id,
             'title' => $title,
+            'image' => $img,
             'description'=>$body
 
         ));
@@ -245,8 +247,9 @@ class FrontController extends Controller
             {
                 $id = $var->getId();
                 $title = $var->getTitle();
+                $img = $var->getImageurl();
 
-                $detail[]= array('id'=>$id, 'title'=>$title);
+                $detail[]= array('id'=>$id, 'title'=>$title, 'image' => $img);
             }
         }
 
