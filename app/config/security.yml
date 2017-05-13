@@ -46,3 +46,4 @@ security:
          - { path: ^/reviews, role: ROLE_USER }
          - { path: ^/contact, role: ROLE_USER }
          - { path: ^/admin, role: ROLE_USER }
+         - { path: ^/register, role: ROLE_USER }
