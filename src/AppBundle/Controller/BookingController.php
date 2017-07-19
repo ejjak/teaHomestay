@@ -66,7 +66,8 @@ class BookingController extends Controller
         $message = \Swift_Message::newInstance("Tea Homestay Booking from ". $data["name"])
             ->setFrom(array($myappContactMail => "Message by ".$data["name"]))
             ->setTo(array(
-                $myappContactMail => $myappContactMail
+                $myappContactMail => $myappContactMail,
+                'booking.neatholidays@gmail.com' => 'booking.neatholidays@gmail.com'
             ))
             ->setBody(
                     "Name: ".$data["name"].
