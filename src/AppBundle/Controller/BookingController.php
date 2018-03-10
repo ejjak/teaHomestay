@@ -51,8 +51,8 @@ class BookingController extends Controller
     }
 
     private function sendEmail($data){
-        $myappContactMail = 'teavillagecottage@gmail.com';
-        $myappContactPassword = 'qjtpxgdtgvitbbtj';
+        $myappContactMail = 'ezycreation@gmail.com';
+        $myappContactPassword = 'i sneeze all the time?321@';
 
         // In this case we'll use the ZOHO mail services.
         // If your service is another, then read the following article to know which smpt code to use and which port
@@ -70,7 +70,7 @@ class BookingController extends Controller
                 'booking.neatholidays@gmail.com' => 'booking.neatholidays@gmail.com'
             ))
             ->setBody(
-                    "Name: ".$data["name"].
+                    "<b>Name:</b>".$data["name"].
                     "<br><b>Email id.: </b>".$data["email"].
                     "<br><b>Phone no.: </b>".$data["phone"].
                     "<br><b>Address: </b>".$data["address"].
