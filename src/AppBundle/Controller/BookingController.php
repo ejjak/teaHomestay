@@ -70,7 +70,7 @@ class BookingController extends Controller
                 'booking.neatholidays@gmail.com' => 'booking.neatholidays@gmail.com'
             ))
             ->setBody(
-                    "<b>Name:</b>".$data["name"].
+                    "Name:".$data["name"].
                     "<br><b>Email id.: </b>".$data["email"].
                     "<br><b>Phone no.: </b>".$data["phone"].
                     "<br><b>Address: </b>".$data["address"].
